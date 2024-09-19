@@ -61,19 +61,12 @@ header .navbar
     color: #19a463;
 }
 
-.navbar .menu-links .theme a i
-{
-    display: flex;
-    gap: 0.8rem;
-    align-items: center;
-}
-
 .navbar .menu-links .Sign-up
 {
     background-color: var(--secondary-color);
     border-radius: 0.4rem;
-    height: 5vh;
-    width: 5vw;
+    height: 40px;
+    width: 80px;
     text-align: center;
     align-content: center;
 }
