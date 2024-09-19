@@ -84,5 +84,48 @@ header .navbar
     color: #000;
     font-weight: bold;
     font-size: 2rem;
+    margin-left: 3rem;
 }
 
+section
+{
+    width: 100%;
+    min-height: 90vh;
+    margin-top: 50px;
+}
+
+.home
+{
+    display: flex;
+    justify-content: center;
+    align-items: top;
+}
+
+.home .home-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9px;
+    background: #4E8786;
+    width: 86rem;
+    height: 30rem;
+    z-index: -2;
+}
+
+.home-details p
+{
+    color: #fff;
+    font-size: 58px;
+    margin-bottom: 35px;
+}
+
+.home-details .search-box
+{
+    display: flex;
+    justify-content: center;
+    border-radius: 9px;
+    background: #fff;
+    width: 55rem;
+    height: 3.8rem;
+}
