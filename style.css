@@ -18,12 +18,14 @@
     transition: 0.1s;
 }
 
-body, html {
+body, html
+{
     height: 100%;
     scroll-behavior: smooth;
 }
 
-header {
+header
+{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -132,7 +134,7 @@ section {
     display: flex;
     justify-content: center;
     border-radius: 9px;
-    background: var(--primary-color);
+    background: #fff;
     width: 50vw;
     height: 40px;
 }
@@ -156,34 +158,44 @@ section {
 }
 
 .categories {
-    padding: 0 42px;
+    padding: 0 50px;
 }
 
 .categories .content .categories-links
 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    display: flex;
     gap: 20px;
     list-style: none;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.categories .content .categories-links li
-{
-    display: flex;
-    height: 10rem;
-    width: 10rem;
-    padding: 15px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    box-shadow: 0px 0px 3px 0px var(--tertiary-color);
+    justify-content: space-around;
 }
 
 .categories .content .categories-links li a{
+    display: flex;
+    padding: 15px;
+    height: 180px;
+    width: 180px;
+    border-radius: 10px;
+    gap: 20px;
+    box-shadow: 0px 0px 3px 0px var(--tertiary-color);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     text-decoration: none;
+    font-family: var(--primary-font);
+    color: var(--tertiary-color);
+    font-weight: bolder;
+}
+
+.categories .content .categories-links li a:hover{
+    transition: ease-out 0.5s;
+    scale: 1.01;
+    box-shadow: 0px 0px 10px 0px var(--tertiary-color);
+}
+
+.categories .content .categories-links li a img
+{
+    width: auto;
+    height: 50px;
 }
 
 .products {
@@ -262,6 +274,14 @@ section {
     right: 20px;
 }
 
+@media(max-width: 1150px){
+    .categories .content .categories-links {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media(max-width: 768px) {
 
     .content .home-details {
@@ -271,5 +291,9 @@ section {
 
     .home-details p {
         font-size: 5vw;
+    }
+
+    .categories .content .categories-links {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
