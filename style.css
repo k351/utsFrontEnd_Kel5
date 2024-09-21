@@ -15,7 +15,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: var(--primary-font);
-    transition: 0.1s;
+    transition: 0.2s;
 }
 
 body, html
@@ -24,19 +24,18 @@ body, html
     scroll-behavior: smooth;
 }
 
-header
-{
+.main-header{
     position: fixed;
-    top: 0;
     width: 100%;
-    z-index: 1000;
-    background-color: var(--primary-color);
+    z-index: 20;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 65px;
     border-bottom: var(--tertiary-color) 2px solid;
     overflow: hidden;
+    background-color: var(--primary-color);
+    top: 0;
 }
 
 .logo a h2{
@@ -124,6 +123,39 @@ a {
     text-decoration: none;
 }
 
+.categories-header {
+    width: 100%;
+    position: fixed;
+    border-bottom: 2px solid var(--tertiary-color);
+    top: -100px;
+    background-color: var(--primary-color);
+    transition:  0.5s ease;
+    z-index: 5;
+}
+
+.categories-header-show {
+    top: 80px;
+}
+
+.categories-header ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    height: 30px;
+}
+
+.categories-header a{
+    color: var(--tertiary-color);
+    font-family: var(--secondary-font);
+    font-weight: bolder;
+}
+
+.categories-header a:hover{
+    color: var(--secondary-color);
+    text-shadow: 0px 0px 2px;
+}
+
 section {
     width: 100%;
     min-height: auto;
@@ -209,7 +241,6 @@ section {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    text-decoration: none;
     font-family: var(--primary-font);
     color: var(--tertiary-color);
     font-weight: bolder;
@@ -318,6 +349,7 @@ section {
     }
 
     section {
+        margin-top: 65px;
         padding-top: 80px;
     }
 
@@ -362,6 +394,10 @@ section {
         transform: translateY(-8px) rotate(-45deg);
     }
 
+    .categories-header-show {
+        top: 77px;
+    }
+
     .content .home-details {
         height: 40vh;
         width: 80vw;
@@ -373,18 +409,6 @@ section {
 
     .categories .content .categories-links {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-@media(max-width: 630px) {
-
-    .categories {
-        overflow: hidden;
-    }
-    
-    .products {
-        overflow: hidden;
     }
 
 }
