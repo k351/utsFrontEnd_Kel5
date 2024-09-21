@@ -26,6 +26,11 @@ body, html
 
 header
 {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--primary-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,22 +57,26 @@ a {
     display: flex;
 }
 
-.navbar ul {
+.navbar .nav-menu {
     display: flex;
     list-style: none;
 }
 
-.navbar ul li {
+.nav-item {
     padding: 10px;
     margin: 0 20px;
 }
 
-.navbar ul li a, 
-.navbar ul li a i {
+.nav-link {
     color: var(--tertiary-color);
     letter-spacing: 1px;
     cursor: pointer;
 }
+
+.nav-link:hover, 
+.nav-link i:hover {
+    color: var(--secondary-color);
+} 
 
 .sign-option {
     display: flex;
@@ -95,10 +104,30 @@ a {
     transition: all 0.2s linear;
 }
 
+.navbar .hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--tertiary-color);
+}
+
+.navbar .dropdown {
+    display: none;
+    list-style: none;
+    text-decoration: none;
+}
+
 section {
     width: 100%;
     min-height: auto;
-    margin-top: 50px;
+    margin: 130px 0 65px 0;
 }
 
 .home {
@@ -284,6 +313,55 @@ section {
 
 @media(max-width: 768px) {
 
+    header {
+        overflow: hidden;
+    }
+
+    section {
+        padding-top: 80px;
+    }
+
+    .nav-menu {
+        width: 100%;
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        flex-direction: column;
+        gap: 0;
+        text-align: center;
+        transition: 0.3s;
+        background-color: var(--primary-color);
+    }
+
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .navbar .sign-option {
+        display: none;
+    } 
+
+    .navbar .hamburger {
+        display: block;
+        justify-content: space-between;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
     .content .home-details {
         height: 40vh;
         width: 80vw;
@@ -296,4 +374,17 @@ section {
     .categories .content .categories-links {
         grid-template-columns: repeat(2, 1fr);
     }
+
+}
+
+@media(max-width: 630px) {
+
+    .categories {
+        overflow: hidden;
+    }
+    
+    .products {
+        overflow: hidden;
+    }
+
 }
