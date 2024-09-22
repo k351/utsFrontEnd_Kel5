@@ -90,6 +90,8 @@ const priaMenu = document.querySelector(".pria");
 const wanitaMenu = document.querySelector(".wanita");
 const priaExplore = document.getElementById("pria-contents");
 const wanitaExplore = document.getElementById("wanita-contents");
+const searchInput = document.querySelector('.search-header input');
+const blackBox = document.querySelector('.black-box');
 
 priaMenu.addEventListener("click", () => {
     priaExplore.classList.toggle("pria-contents-show")
@@ -142,6 +144,14 @@ window.addEventListener('scroll', () => {
     } else {
         categoriesHidden.classList.remove('categories-header-show');  
     }
+});
+
+searchInput.addEventListener('focus', () => {
+    blackBox.classList.add('black-box-show');
+});
+
+searchInput.addEventListener('blur', () => {
+    blackBox.classList.remove('black-box-show');
 });
 
 // Text manipulation
