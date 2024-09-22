@@ -1,49 +1,89 @@
-$(document).ready(function () {
+$(document).ready(function() {
     let currentIndex = 0;
-    const slides = $('.slide');
-    const totalSlides = slides.length;
+    const $slides = $('.slide');
+    const totalSlides = $slides.length;
+    const $carouselTrack = $('.carousel-track');
+    const $carouselContainer = $('.carousel-container');
 
-    // Clone the first slide and append it to the end to create seamless loop
-    $('.carousel').append(slides.first().clone());
+    // Clone the first slide and append it to the end for seamless looping
+    const $firstSlideClone = $slides.first().clone();
+    $carouselTrack.append($firstSlideClone);
 
+    // Set up initial state
+    let autoSlideInterval;
+    const slideDuration = 700;  
+    const autoSlideDelay = 5000; 
+
+    // Function to update carousel width dynamically
+    function updateSlideWidth() {
+        return $carouselContainer.outerWidth();
+    }
+
+    // Move to the next slide
     function moveToNextSlide() {
+        const slideWidth = updateSlideWidth();
         currentIndex++;
-        const carouselWidth = $('.carousel-container').width(); // Get the width of the container
 
-        // Move to the next slide
-        $('.carousel').css('transform', `translateX(-${currentIndex * carouselWidth}px)`);
+        $carouselTrack.css({
+            'transition': `transform ${slideDuration}ms ease`,
+            'transform': `translateX(-${currentIndex * slideWidth}px)`
+        });
 
-        // Reset to the first slide after reaching the last one
         if (currentIndex === totalSlides) {
-            setTimeout(function () {
-                $('.carousel').css('transition', 'none'); // Disable transition for the reset
+            setTimeout(function() {
+                $carouselTrack.css('transition', 'none'); 
                 currentIndex = 0;
-                $('.carousel').css('transform', 'translateX(0)'); // Reset to the first slide
-                
-                // Re-enable transition after resetting
-                setTimeout(function () {
-                    $('.carousel').css('transition', 'transform 0.7s ease'); // Smooth sliding back on
-                }, 50); // Small delay to re-enable transition after reset
-            }, 700); // This delay should match the transition duration (0.7s)
+                $carouselTrack.css('transform', `translateX(0)`); // Reset to the first slide
+            }, slideDuration);
         }
     }
 
     // Auto-play every 4 seconds
-    setInterval(moveToNextSlide, 4000);
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(moveToNextSlide, autoSlideDelay);
+    }
 
-    // Handle window resize to recalculate the width dynamically
-    $(window).resize(function () {
-        const carouselWidth = $('.carousel-container').width();
-        $('.carousel').css('transform', `translateX(-${currentIndex * carouselWidth}px)`);
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+
+    startAutoSlide();
+
+    // Arrow controls
+    function moveToPrevSlide() {
+        const slideWidth = updateSlideWidth();
+        if (currentIndex > 0) {
+            currentIndex--;
+            $carouselTrack.css({
+                'transition': `transform ${slideDuration}ms ease`,
+                'transform': `translateX(-${currentIndex * slideWidth}px)`
+            });
+        }
+    }
+
+    $('.right-arrow').click(function() {
+        stopAutoSlide();  
+        moveToNextSlide();
+        startAutoSlide(); 
+    });
+
+    $('.left-arrow').click(function() {
+        stopAutoSlide(); 
+        moveToPrevSlide();
+        startAutoSlide();
+    });
+
+    // Handle window resize and recalculate width dynamically
+    $(window).resize(function() {
+        const slideWidth = updateSlideWidth();
+        $carouselTrack.css('transform', `translateX(-${currentIndex * slideWidth}px)`);
     });
 });
-
+  
+// Hamburger 
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 var darkTheme = document.getElementById("dark-theme");
-
-
-// Hamburger 
 
 hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
