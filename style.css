@@ -1,4 +1,4 @@
-    @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
     --primary-color: #f3f3f3;
@@ -247,40 +247,6 @@ a {
     text-decoration: none;
 }
 
-.categories-header {
-    width: 100%;
-    position: fixed;
-    border-bottom: 1px solid var(--tertiary-color);
-    top: -100px;
-    background-color: var(--primary-color);
-    transition:  0.5s ease;
-    z-index: 8;
-    height: 30px;
-}
-
-.categories-header-show {
-    top: 80px;
-}
-
-.categories-header ul {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    list-style: none;
-    height: 30px;
-}
-
-.categories-header a{
-    color: var(--tertiary-color);
-    font-family: var(--secondary-font);
-    font-weight: bolder;
-}
-
-.categories-header a:hover{
-    color: var(--secondary-color);
-    text-shadow: 0px 0px 2px;
-}
-
 section {
     width: 100%;
     min-height: auto;
@@ -305,8 +271,8 @@ section {
     align-items: center;
     border-radius: 9px;
     background: #4E8786;
-    width: 86rem;
-    height: 30rem;
+    width: 90vw;
+    height: 60vh;
     z-index: -2;
 }
 
@@ -344,9 +310,43 @@ section {
     cursor: pointer;
 }
 
+.categories-header {
+    width: 100%;
+    position: fixed;
+    border-bottom: 1px solid var(--tertiary-color);
+    top: -100px;
+    background-color: var(--primary-color);
+    transition:  0.5s ease;
+    z-index: 8;
+    height: 30px;
+}
+
+.categories-header-show {
+    top: 80px;
+}
+
+.categories-header ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    height: 30px;
+}
+
+.categories-header a{
+    color: var(--tertiary-color);
+    font-family: var(--secondary-font);
+    font-weight: bolder;
+}
+
+.categories-header a:hover{
+    color: var(--secondary-color);
+    text-shadow: 0px 0px 2px;
+}
+
 .carousel {
     position: relative;
-    width: 86rem;
+    width: 90vw;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 20px; 
@@ -543,6 +543,7 @@ footer .col {
 }
 
 footer h2 {
+    font-size: 35px;
     margin-bottom: 30px;
 }
 
@@ -589,6 +590,7 @@ footer a:hover {
 }
 
 .copyright p {
+    font-size: 15px;
     color: var(--primary-color);
 }
 
@@ -686,4 +688,8 @@ footer a:hover {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .carousel {
+        width: 80vw;
+        height: 50vh;
+    }
 }
