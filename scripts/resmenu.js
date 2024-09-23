@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else if (navLink.innerHTML.includes('fa-heart')) {
                     navLink.innerHTML = 'Wishlist'
                 } else if (navLink.innerHTML.includes('fa-angle-down')) {
-                    navLink.innerHTML = 'Categories'
+                    navLink.innerHTML = 'Explore'
                 }
 
                 // Add a "Sign In" button if it doesn't exist
@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     navLink.innerHTML = '<i class="fa-solid fa-cart-shopping"></i>'
                 } else if (navLink.textContent === 'Wishlist') {
                     navLink.innerHTML = '<i class="fa-regular fa-heart"></i>'
-                } else if (navLink.textContent === 'Categories') {
-                    navLink.innerHTML = 'Categories <i class="fa-solid fa-angle-down"></i>'
+                } else if (navLink.textContent === 'Explore') {
+                    navLink.innerHTML = 'Explore <i class="fa-solid fa-angle-down"></i>'
                 }
 
                 // Remove "Sign In" button when in desktop view

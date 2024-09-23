@@ -13,7 +13,7 @@
     <header>
         <div class="main-header">
             <div class="logo">
-                <a href="#"> 
+                <a href="index.html"> 
                     <h2>revife<span>.</span></h2>
                 </a>
             </div>
@@ -106,56 +106,27 @@
 
     </header>
 
-    <section id="cart" class="section-p2">
-        <table width="100%">
-            <thead>
-                <tr>
-                    <td>Remove</td>
-                    <td>Image</td>
-                    <td>Product</td>
-                    <td>Price</td>
-                    <td>Quantity</td>
-                    <td>Subtotal</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="#"><i class="fa-regular fa-circle-xmark"></i></a></td>
-                    <td><img src="images\products\f2.png" alt=""></td>
-                    <td>Godzilla Short Sleeve UT</td>
-                    <td>Rp209.000</td>
-                    <td><input type="number" value="1"></td>
-                    <td>Rp209.000</td>
-                </tr>
-
-                <tr>
-                    <td><a href="#"><i class="fa-regular fa-circle-xmark"></i></a></td>
-                    <td><img src="images\products\f1.png" alt=""></td>
-                    <td>Crew Neck T-Shirts</td>
-                    <td>Rp199.000</td>
-                    <td><input type="number" value="1"></td>
-                    <td>Rp199.000</td>
-                </tr>
-                
-                <tr>
-                    <td><a href="#"><i class="fa-regular fa-circle-xmark"></i></a></td>
-                    <td><img src="images\products\f3.png" alt=""></td>
-                    <td>Fleece Full-Zip Jacket</td>
-                    <td>Rp399.000</td>
-                    <td><input type="number" value="1"></td>
-                    <td>Rp399.000</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section id="cart-total" class="section-p3">
-        <div class="coupon">
-            <h3>Apply Coupon</h3>
-            <input type="text" placeholder="Please enter your coupon">
-            <button>Apply</button>
-        </div>
+    <section id="cart-check-out" class="section-p2">
         <div class="total">
+            <h3>Address Delivery</h3>
+            <table>
+                <tr>
+                    <td>Contact Person</td>
+                    <td>Christopher | (+62) 896-2324-4972</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>Jl Sunter Karya G K A V I / 14</td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td>North Jakarta</td>
+                </tr>
+                <tr>
+                    <td>Postcode</td>
+                    <td>11510</td>
+                </tr>
+            </table>
             <h3>Cart Total</h3>
             <table>
                 <tr>
@@ -163,15 +134,29 @@
                     <td>Rp 807.000</td>
                 </tr>
                 <tr>
+                    <td>Coupon</td>
+                    <td>Rp (10.000)</td>
+                </tr>
+                <tr>
                     <td>Shipping</td>
                     <td>Free</td>
                 </tr>
                 <tr>
                     <td><strong>Total</strong></td>
-                    <td><strong>Rp 807.000</strong></td>
+                    <td><strong>Rp 797.000</strong></td>
                 </tr>
             </table>
-            <button class="normal"><a href="checkout.html">Proceed to checkout</a></button>
+            <div class="payment">
+                <h3>Payment</h3>
+                <select id="payment-method">
+                    <option value="paypal">Paypal</option>
+                    <option value="mastercard">Mastercard</option>
+                    <option value="ovo">OVO</option>
+                    <option value="gopay">GoPay</option>
+                    <option value="bank">Bank</option>
+                </select>
+            </div>
+            <button class="normal"><a href="checkout.html">Checkout</a></button>
         </div>
     </section>
 

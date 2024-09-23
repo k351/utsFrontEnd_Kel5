@@ -31,26 +31,36 @@ exploreMenu.addEventListener("click", () => {
 
 
 
-window.addEventListener('scroll', () => {
-    const searchLimiter = document.querySelector('.home');
-    const searchHidden = document.querySelector('.search-header');
-    const categoriesLimiter = document.querySelector('.categories');  
-    const categoriesHidden = document.querySelector('.categories-header'); 
-    const searchLimiterPos = searchLimiter.getBoundingClientRect().bottom
-    const categoriesLimiterPos = categoriesLimiter.getBoundingClientRect().bottom; 
+const currentPage = window.location.pathname;
 
-    if (searchLimiterPos <= 80) {
-        searchHidden.classList.add('search-header-show'); 
-    } else {
-        searchHidden.classList.remove('search-header-show');  
-    }
-    
-    if (categoriesLimiterPos <= 80) {
-        categoriesHidden.classList.add('categories-header-show'); 
-    } else {
-        categoriesHidden.classList.remove('categories-header-show');  
-    }
-});
+if (currentPage.includes('index.html') || currentPage === '/') {
+    // This block runs only on index.html
+    window.addEventListener('scroll', () => {
+        const searchLimiter = document.querySelector('.home');
+        const searchHidden = document.querySelector('.search-header');
+        const categoriesLimiter = document.querySelector('.categories');  
+        const categoriesHidden = document.querySelector('.categories-header'); 
+        const searchLimiterPos = searchLimiter.getBoundingClientRect().bottom;
+        const categoriesLimiterPos = categoriesLimiter.getBoundingClientRect().bottom;
+
+        if (searchLimiterPos <= 80) {
+            searchHidden.classList.add('search-header-show'); 
+        } else {
+            searchHidden.classList.remove('search-header-show');  
+        }
+
+        if (categoriesLimiterPos <= 80) {
+            categoriesHidden.classList.add('categories-header-show'); 
+        } else {
+            categoriesHidden.classList.remove('categories-header-show');  
+        }
+    });
+} else if (currentPage.includes('shop.html')) {
+    // Automatically show elements on shop.html without scrolling
+    const searchHidden = document.querySelector('.search-header');
+
+    searchHidden.classList.add('search-header-show');
+}
 
 searchInput.addEventListener('focus', () => {
     blackBox.classList.add('black-box-show');
