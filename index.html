@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revife.</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/home.css">
+    <link rel="stylesheet" href="style/categories.css">
+    <link rel="stylesheet" href="style/carousel.css">
+    <link rel="stylesheet" href="style/products.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/cart.css">
+    <link rel="stylesheet" href="style/checkout.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <script src="./jquery-3.7.1.min.js"></script>
-    <script src="./script.js" defer></script>
+    <script src="scripts/jquery-3.7.1.min.js"></script>
 </head>
 <body>
 
@@ -19,8 +26,8 @@
                 </a>
             </div>
             <form action="#" class="search-header">
-                <input type="text" placeholder="Search for products">
-                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></i></button>
+                <input type="text" placeholder="Search for products" id="searchBar" oninput="search()">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
             <nav class="navbar">
                 <ul class="nav-menu">
@@ -348,6 +355,6 @@
     <script src="./scripts/hamburger.js"></script>
     <script src="./scripts/carousel.js"></script>
     <script src="./scripts/header.js"></script>
-    <script src="./scripts/selectmenu.js"></script>
+    <script src="./scripts/search.js"></script>
 </body>
 </html>
