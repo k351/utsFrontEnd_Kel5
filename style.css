@@ -18,6 +18,25 @@
     --quinary-color: #8d99ad; /* Dark gray for subtle elements */
 }
 
+::-webkit-scrollbar {
+    width: 5px; 
+    height: 5px; 
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-color); 
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--quinary-color); 
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -387,7 +406,7 @@ section {
 
 .carousel-container {
     position: relative;
-    width: 90vw;
+    width: 90dvw;
     display: flex;
     border-radius: 20px;
     overflow: hidden;
@@ -403,8 +422,9 @@ section {
     transition: transform 0.5s ease-in-out;
 }
 
-img {
+.slide img {
     display: block;
+    object-fit: cover;
     width: 100%;
 }
 
@@ -429,11 +449,11 @@ img {
 }
 
 .left-arrow {
-    left: 10px; 
+    left: 5px; 
 }
 
 .right-arrow {
-    right: 10px; 
+    right: 5px; 
 }
 
 /* Arrow hover effects */
@@ -832,26 +852,6 @@ footer a:hover {
     margin: 0 0 10px 20px;
 }
 
-@media(max-width: 1150px){
-    .categories .content .categories-links {
-        display: grid;
-        justify-items: center;
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .nav-item {
-        margin: 0 5px;
-    }
-
-    .search-header {
-        width: 17vw;
-    }
-
-    .search-header button {
-        display: none;
-    }
-}
-
 @media(max-width: 768px) {
 
     header {
@@ -936,5 +936,14 @@ footer a:hover {
     #cart-total .total {
         width: 100%;
         padding: 30px;
+    }
+    
+    .carousel-container:hover .arrow {
+        display: none;
+    }
+
+    .carousel-container {
+        width: 100dvw;
+        border-radius: 0px;
     }
 }
