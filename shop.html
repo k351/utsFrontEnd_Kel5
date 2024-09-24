@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revife.</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/home.css">
+    <link rel="stylesheet" href="style/categories.css">
+    <link rel="stylesheet" href="style/carousel.css">
+    <link rel="stylesheet" href="style/products.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/cart.css">
+    <link rel="stylesheet" href="style/checkout.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <script src="./jquery-3.7.1.min.js"></script>
-    <script src="./script.js" defer></script>
+    <script src="scripts/jquery-3.7.1.min.js"></script>
 </head>
 <body>
 
@@ -19,7 +26,7 @@
                 </a>
             </div>
             <form action="#" class="search-header">
-                <input type="text" placeholder="Search for products" id="searchBar">
+                <input type="text" placeholder="Search for products" id="searchBar" oninput="search()">
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></i></button>
             </form>
             <nav class="navbar">
@@ -110,7 +117,135 @@
 
     <section class="products">
         <div class="box-container">
-
+            <div class="box-container">
+                <div class="box">
+                    <img src="images\products\f1.png" alt="">
+                    <div class="desc">
+                        <span>t-shirts</span>
+                        <h5>Crew Neck T-Shirts</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>Rp199.000</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-plus cart" style="color: #000000;"></i></a>
+                </div>
+                <div class="box">
+                    <img src="images\products\f2.png" alt="">
+                    <div class="desc">
+                        <span>t-shirts</span>
+                        <h5>Godzilla Short Sleeve UT</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>Rp209.000</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-plus cart" style="color: #000000;"></i></a>
+                </div>
+                <div class="box">
+                    <img src="images\products\f3.png" alt="">
+                    <div class="desc">
+                        <span>jacket</span>
+                        <h5>Fleece Full-Zip Jacket</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>Rp399.000</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-plus cart" style="color: #000000;"></i></a>
+                </div>
+                <div class="box">
+                    <img src="images\products\f4.png" alt="">
+                    <div class="desc">
+                        <span>sweatshirt</span>
+                        <h5>Unisex Sweatshirts</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>Rp269.000</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-plus cart" style="color: #000000;"></i></a>
+                </div>
+                <div class="box">
+                    <img src="images\products\f5.png" alt="">
+                    <div class="desc">
+                        <span>jeans</span>
+                        <h5>Ultra Strech Skinny Fit Jeans</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>Rp599.000</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-plus cart" style="color: #000000;"></i></a>
+                </div>
+                <div class="box">
+                    <img src="images\products\f6.png" alt="">
+                    <div class="desc">
+                        <span>shirts</span>
+                        <h5>White Polo</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>Rp299.000</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-plus cart" style="color: #000000;"></i></a>
+                </div>
+                <div class="box">
+                    <img src="images\products\f7.png" alt="">
+                    <div class="desc">
+                        <span>t-shirts</span>
+                        <h5>Tailored Jacket Relax Fit</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>Rp399.000</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-plus cart" style="color: #000000;"></i></a>
+                </div>
+                <div class="box">
+                    <img src="images\products\f8.png" alt="">
+                    <div class="desc">
+                        <span>jacket</span>
+                        <h5>Soft Flannel Skipper Shirt</h5>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4>Rp399.000</h4>
+                    </div>
+                    <a href="#"><i class="fa-solid fa-cart-plus cart" style="color: #000000;"></i></a>
+                </div>
         </div>
     </section>
 
@@ -179,7 +314,6 @@
     <script src="./scripts/hamburger.js"></script>
     <script src="./scripts/carousel.js"></script>
     <script src="./scripts/header.js"></script>
-    <script src="./scripts/selectmenu.js"></script>
-    <script src="./scripts/data.js"></script>
+    <script src="./scripts/search.js"></script>
 </body>
 </html>
