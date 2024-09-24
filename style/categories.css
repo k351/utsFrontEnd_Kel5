@@ -39,3 +39,23 @@
     width: auto;
     height: 50px;
 }
+
+@media(max-width: 1150px){
+    .categories .content .categories-links {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@media(max-width: 768px) {
+
+    .categories-header .categories-header-show {
+        top: 77px;
+    }
+
+    .categories .content .categories-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
