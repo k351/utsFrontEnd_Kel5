@@ -11,11 +11,31 @@
 }
 
 .darkmode {
-    --primary-color: #1C1C1C; /* Dark background */
-    --secondary-color: #00ADB5; /* Cool teal */
-    --tertiary-color: #EEEEEE; /* Light text color */
-    --quarternary-color: #72afff; /* Warm accent color */
-    --quinary-color: #8d99ad; /* Dark gray for subtle elements */
+    --primary-color: #1C1C1C;
+    --secondary-color: #00ADB5; 
+    --tertiary-color: #EEEEEE;
+    --quarternary-color: #72afff; 
+    --quinary-color: #8d99ad;
+}
+
+::-webkit-scrollbar {
+    background: var(--primary-color); 
+    width: 10px;
+    height: 10px; 
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px; 
+    background-color: var(--tertiary-color);
+    border: 2px solid #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--primary-color); 
 }
 
 * {
@@ -76,6 +96,10 @@ section {
     }
 
     .search-header button {
+        display: none;
+    }
+
+    .carousel-container:hover .arrow {
         display: none;
     }
 }
@@ -151,6 +175,10 @@ section {
 
     .home .content .home-details p {
         font-size: 5vw;
+    }
+
+    .carousel-container {
+        border-radius: 0px;
     }
 
     .categories .content .categories-links {

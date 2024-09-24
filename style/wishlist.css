@@ -1,6 +1,7 @@
 /* Wishlist */
 .wishlist-main {
     display: flex;
+    background-color: var(--primary-color);
     justify-content: space-evenly;
 }
 
@@ -108,7 +109,7 @@
     padding: 15px;
     text-align: center;
     font-size: 1rem;
-    background-color: var(--primary-color);
+    background-color: var(--tertiary-color);
 }
 
 .product-info h4 {
