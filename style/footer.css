@@ -4,6 +4,7 @@ footer {
     flex-wrap: wrap;
     background-color: var(--primary-color);
     color: var(--tertiary-color);
+    border-top: 1px solid var(--tertiary-color);
 }
 
 footer .col {

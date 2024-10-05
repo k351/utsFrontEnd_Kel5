@@ -75,6 +75,7 @@ function updateCartTotal(cartItems) {
 
     // Display the total cost in the "Cart Total" section
     document.querySelector('#cart-total table tr:nth-child(3) td:last-child').innerText = total.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' });
+    document.querySelector('#cart-total table tr:nth-child(1) td:last-child').innerText = total.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' });
 }
 
 // Load cart items when the page loads

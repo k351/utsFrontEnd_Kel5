@@ -26,7 +26,7 @@ function renderProducts(page) {
                     </div>
                     <h4>${product.price}</h4>
                 </div>
-                <a href="javascript:void(0);" onclick="addToCart('${product.name}', '${product.image}', '${product.price}')">
+                <a onclick="addToCart('${product.name}', '${product.image}', '${product.price}')">
                     <i class="fa-solid fa-cart-plus cart" style="color: ${product.cart_icon_color};"></i>
                 </a>
             </div>

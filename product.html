@@ -5,15 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revife.</title>
     <link rel="stylesheet" href="style/header.css">
-    <link rel="stylesheet" href="style/home.css">
-    <link rel="stylesheet" href="style/categories.css">
-    <link rel="stylesheet" href="style/carousel.css">
-    <link rel="stylesheet" href="style/products.css">
     <link rel="stylesheet" href="style/footer.css">
-    <link rel="stylesheet" href="style/cart.css">
-    <link rel="stylesheet" href="style/checkout.css">
-    <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/product.css">
     <script src="scripts/jquery-3.7.1.min.js"></script>
 </head>
 <body>
@@ -35,6 +30,9 @@
                     <li class="nav-item"><a href="cart.html" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a></li>
                     <li class="nav-item"><a href="wishlist.html" class="nav-link"><i class="fa-solid fa-heart"></i></a></li>
                 </ul>
+                <div class="sign-option">
+                    <button class="sign-in">Sign In</button>
+                </div>
                 <div class="hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -122,49 +120,67 @@
         <div class="black-box"></div>
     </header>
 
-    <section id="cart" class="section-p2">
-        <table width="100%">
-            <thead>
-                <tr>
-                    <td>Remove</td>
-                    <td>Image</td>
-                    <td>Product</td>
-                    <td>Price</td>
-                    <td>Quantity</td>
-                    <td>Subtotal</td>
-                </tr>
-            </thead>
-            <tbody id="cart-items">
-                <!-- Cart items will be populated here by JavaScript -->
-            </tbody>
-        </table>
+    <section class="product">
+        <div class="product-container">
+            <div class="compare-product">
+                <div class="compare-product-image">
+                    <img src="./images/products/f2.png" alt="">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="compare-summary">
+                    <h5>(Compared-product)</h5>
+                    <h3>Men's Fashion T Shirt</h3>
+                    <h2>$150.00</h4>
+                </div>
+            </div>
+            <div class="compare-line"></div>
+            <div class="main-product">
+                <div class="product-image">
+                    <img src="./images/products/f1.png" alt="">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="main-product-summary1">
+                    <h5>Home/T shirts</h5>
+                    <h3>Men's Fashion T Shirt</h3>
+                    <h2>$139.00</h4>
+                </div>
+            </div>
+            <div class="main-product-details">
+                <div class="main-product-summary2">
+                    <h6>Home/T shirts</h6>
+                    <h4>Men's Fashion T Shirt</h4>
+                    <h2>$139.00</h2>
+                </div>
+                <select>
+                    <option>Select Size</option>
+                    <option>XXL</option>
+                    <option>XL</option>
+                    <option>L</option>
+                    <option>M</option>
+                    <option>S</option>
+                    <option>XS</option>
+                </select>
+                <div class="product-details-button">
+                    <input type="number" value="1">
+                    <button>Add to Cart</button>
+                    <button class="compare-button">
+                        <i class="fa-solid fa-code-compare"></i>
+                    </button>    
+                </div>
+                <h4>Product Details</h4>
+                <p> Lorem, ipsum dolor sit amet 
+                    consectetur adipisicing elit. 
+                    Molestiae veniam fuga laborum 
+                    quibusdam ducimus iusto, ratione 
+                    hic voluptas similique dolores 
+                    necessitatibus dolor repellat 
+                    voluptatem minus dolore obcaecati rem. 
+                    Ratione, aspernatur!
+                </p>
+            </div>
+        </div>
     </section>
 
-    <section id="cart-total" class="section-p3">
-        <div class="coupon">
-            <h3>Apply Coupon</h3>
-            <input type="text" placeholder="Please enter your coupon">
-            <button>Apply</button>
-        </div>
-        <div class="total">
-            <h3>Cart Total</h3>
-            <table>
-                <tr>
-                    <td>Cart Total</td>
-                    <td>Rp 0</td>
-                </tr>
-                <tr>
-                    <td>Shipping</td>
-                    <td>Free</td>
-                </tr>
-                <tr>
-                    <td><strong>Total</strong></td>
-                    <td><strong>Rp 0</strong></td>
-                </tr>
-            </table>
-            <button class="normal"><a href="checkout.html">Proceed to checkout</a></button>
-        </div>
-    </section>
 
     <footer class="section-p1">
         <div class="col">
@@ -219,12 +235,11 @@
     <div class="copyright">
         <p>© 2024, UTS Front-End Programming</p>
     </div>
-
     <script src="./scripts/darkmode.js"></script>
     <script src="./scripts/resmenu.js"></script>
     <script src="./scripts/hamburger.js"></script>
-    <script src="./scripts/carousel.js"></script>
     <script src="./scripts/header.js"></script>
-    <script src="./scripts/cart.js"></script>
+    <script src="./scripts/search.js"></script>
+    <script src="./scripts/compare.js"></script>
 </body>
 </html>

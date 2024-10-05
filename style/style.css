@@ -30,12 +30,12 @@
 
 ::-webkit-scrollbar-thumb {
     border-radius: 10px; 
-    background-color: var(--tertiary-color);
+    background-color: var(--primary-color); 
     border: 2px solid #f1f1f1; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--primary-color); 
+    background-color: var(--tertiary-color);
 }
 
 * {
@@ -97,6 +97,10 @@ section {
 
     .search-header button {
         display: none;
+    }
+
+    .home .content .home-details p {
+        font-size: 5vw;
     }
 
     .carousel-container:hover .arrow {
@@ -167,10 +171,6 @@ section {
     .home .content .home-details {
         height: 40vh;
         width: 80vw;
-    }
-
-    .home .content .home-details p {
-        font-size: 5vw;
     }
 
     .carousel-container {
