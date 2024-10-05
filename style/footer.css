@@ -35,7 +35,7 @@ footer a {
     color: var(--tertiary-color);
 }
 
-footer .social {
+footer .social .icon {
     padding-right: 4px;
     cursor: pointer;
 }

@@ -144,7 +144,7 @@ a {
 }
 
 .explore-contents .pria-contents-show {
-    top:110px
+    top: 110px
 }
 
 .explore-contents .wanita-contents-show {
@@ -166,32 +166,6 @@ a {
 .explore-contents ul li a {
     color: var(--tertiary-color);
     font-weight: bold;
-}
-
-.sign-option {
-    display: flex;
-    align-items: center;
-}
-
-.sign-option .sign-in {
-    margin: 0 20px;
-    padding: 5px;
-    font-size: 14px;
-    border-style: solid;
-    border-color: var(--quarternary-color);
-    color: var(--quarternary-color);
-    border-radius: 6px;
-    background-color: transparent;
-    cursor: pointer;
-    font: var(--secondary-font);
-    font-weight: bolder;
-}
-
-.sign-option .sign-in:hover {
-    background-color: var(--quarternary-color);
-    color: var(--primary-color);
-    border-color: var(--secondary-color);
-    transition: all 0.2s linear;
 }
 
 .navbar .hamburger {

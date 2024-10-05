@@ -35,9 +35,6 @@
                     <li class="nav-item"><a href="cart.html" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a></li>
                     <li class="nav-item"><a href="wishlist.html" class="nav-link"><i class="fa-solid fa-heart"></i></a></li>
                 </ul>
-                <div class="sign-option">
-                    <button class="sign-in">Sign In</button>
-                </div>
                 <div class="hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -125,33 +122,8 @@
                     <td>Subtotal</td>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td><a href="#"><i class="fa-regular fa-circle-xmark"></i></a></td>
-                    <td><img src="images\products\f2.png" alt=""></td>
-                    <td>Godzilla Short Sleeve UT</td>
-                    <td>Rp209.000</td>
-                    <td><input type="number" value="1"></td>
-                    <td>Rp209.000</td>
-                </tr>
-
-                <tr>
-                    <td><a href="#"><i class="fa-regular fa-circle-xmark"></i></a></td>
-                    <td><img src="images\products\f1.png" alt=""></td>
-                    <td>Crew Neck T-Shirts</td>
-                    <td>Rp199.000</td>
-                    <td><input type="number" value="1"></td>
-                    <td>Rp199.000</td>
-                </tr>
-                
-                <tr>
-                    <td><a href="#"><i class="fa-regular fa-circle-xmark"></i></a></td>
-                    <td><img src="images\products\f3.png" alt=""></td>
-                    <td>Fleece Full-Zip Jacket</td>
-                    <td>Rp399.000</td>
-                    <td><input type="number" value="1"></td>
-                    <td>Rp399.000</td>
-                </tr>
+            <tbody id="cart-items">
+                <!-- Cart items will be populated here by JavaScript -->
             </tbody>
         </table>
     </section>
@@ -241,5 +213,6 @@
     <script src="./scripts/hamburger.js"></script>
     <script src="./scripts/carousel.js"></script>
     <script src="./scripts/header.js"></script>
+    <script src="./scripts/cart.js"></script>
 </body>
 </html>

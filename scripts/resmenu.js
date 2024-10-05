@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navItems = document.querySelectorAll('.nav-item')
     const navbar = document.querySelector('.navbar')
-    let signInButton
 
     function updateNav(e) {
         navItems.forEach(item => {
@@ -15,20 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else if (navLink.innerHTML.includes('fa-angle-down')) {
                     navLink.innerHTML = 'Explore'
                 }
-
-                // Add a "Sign In" button if it doesn't exist
-                if (!signInButton) {
-                    signInButton = document.createElement('li')
-                    signInButton.classList.add('nav-item')
-                    signInButton.innerHTML = '<a href="#" class="nav-link">Sign In</a>'
-                    navbar.querySelector('.nav-menu').appendChild(signInButton)
-
-                // Add event listener to close the menu when "Sign In" is clicked
-                    signInButton.querySelector('.nav-link').addEventListener('click', () => {
-                    hamburger.classList.remove("active")
-                    navMenu.classList.remove("active")
-                    })
-                }
             } else {
                 // Restore icons for desktop view
                 if (navLink.textContent === 'Cart') {
@@ -39,16 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     navLink.innerHTML = 'Explore <i class="fa-solid fa-angle-down"></i>'
                 }
 
-                // Remove "Sign In" button when in desktop view
-                if (signInButton) {
-                    signInButton.remove()
-                    signInButton = null
-                }
             }
         })
     }
 
     const mediaQuery = window.matchMedia('(max-width: 768px)')
-    mediaQuery.addListener(updateNav)
+    mediaQuery.addEventListener('change', updateNav)
     updateNav(mediaQuery)
 })
