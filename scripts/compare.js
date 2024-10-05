@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // mainSummary2.classList.toggle('hide')
   })
 
-  function updateNav(e) {
+  function updatecompare(e) {
     if(e.matches){
       let comparableDiv = document.createElement('div');
       comparableDiv.classList.add('comparable');
@@ -39,6 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   const mediaQuery = window.matchMedia('(max-width: 1150px)')
-      mediaQuery.addListener(updateNav)
-      updateNav(mediaQuery)
+      mediaQuery.addListener(updatecompare)
+      updatecompare(mediaQuery)
 });

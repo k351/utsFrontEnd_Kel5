@@ -137,11 +137,7 @@ a {
     border-radius: 5px;
 }
 
-.explore-contents .pria-contents-show {
-    top:90px
-}
-
-.explore-contents .wanita-contents-show {
+.explore-contents .contents-show {
     top:90px
 }
 
@@ -236,4 +232,10 @@ a {
 .categories-header a:hover{
     color: var(--secondary-color);
     text-shadow: 0px 0px 2px;
+}
+
+@media (max-width: 768px) {
+    .explore-contents .contents-show {
+        top: 230px;
+    }
 }

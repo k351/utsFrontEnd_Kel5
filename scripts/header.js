@@ -1,44 +1,30 @@
+const exploreMenu = document.getElementById("Explore");
+const exploreLinks = document.querySelector(".explore-links");
+const priaMenu = document.querySelector(".pria");
+const wanitaMenu = document.querySelector(".wanita");
+const priaExplore = document.getElementById("pria-contents");
+const wanitaExplore = document.getElementById("wanita-contents");
+const searchInput = document.querySelector('.search-header input');
+const blackBox = document.querySelector('.black-box');
 document.addEventListener('DOMContentLoaded', () => {
-    const exploreMenu = document.getElementById("Explore");
-    const exploreLinks = document.querySelector(".explore-links");
-    const priaMenu = document.querySelector(".pria");
-    const wanitaMenu = document.querySelector(".wanita");
-    const priaExplore = document.getElementById("pria-contents");
-    const wanitaExplore = document.getElementById("wanita-contents");
-    const searchInput = document.querySelector('.search-header input');
-    const blackBox = document.querySelector('.black-box');
-
-    function alignFixedElementToExplore() {
-      if (exploreMenu && exploreLinks) {
-        const rect = exploreMenu.getBoundingClientRect();
-        exploreLinks.style.left = `${rect.left}px`;
-        priaExplore.style.left = `${rect.left - 410}px`
-        wanitaExplore.style.left = `${rect.left - 410}px`
-      }
-    }
-    alignFixedElementToExplore();
-    window.addEventListener('resize', alignFixedElementToExplore);
 
     priaMenu.addEventListener("click", () => {
-        priaExplore.classList.toggle("pria-contents-show")
-        if (wanitaExplore.classList.contains("wanita-contents-show")) {
-            wanitaExplore.classList.remove("wanita-contents-show");
-        }
+        priaExplore.classList.toggle("contents-show")
+        wanitaExplore.classList.remove("contents-show");
+        updateExplore();
     })
     
     wanitaMenu.addEventListener("click", () => {
-        wanitaExplore.classList.toggle("wanita-contents-show")
-        if (priaExplore.classList.contains("pria-contents-show")) {
-            priaExplore.classList.remove("pria-contents-show");
-        }
+        wanitaExplore.classList.toggle("contents-show")
+        priaExplore.classList.remove("contents-show");
+        updateExplore();
     })
     
     exploreMenu.addEventListener("click", () => {
         exploreLinks.classList.toggle("explore-links-show");
-        if (wanitaExplore.classList.contains("wanita-contents-show") || priaExplore.classList.contains("pria-contents-show")) {
-            wanitaExplore.classList.remove("wanita-contents-show");
-            priaExplore.classList.remove("pria-contents-show");
-        }
+        wanitaExplore.classList.remove("contents-show");
+        priaExplore.classList.remove("contents-show");
+        updateExplore();
     });
     
     const currentPage = window.location.pathname;
@@ -81,4 +67,27 @@ document.addEventListener('DOMContentLoaded', () => {
         blackBox.classList.remove('black-box-show');
     });
   });
-  
+    function updateExplore() {
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        if (isMobile) {
+            exploreLinks.style.right = '3%';
+            priaExplore.style.right = '3%';
+            wanitaExplore.style.right = '3%';
+            exploreLinks.style.left = '';  
+            priaExplore.style.left = '';   
+            wanitaExplore.style.left = ''; 
+        } else {
+            const rect = exploreMenu.getBoundingClientRect();
+            exploreLinks.style.left = `${rect.left}px`;
+            priaExplore.style.left = `${rect.left - 410}px`;
+            wanitaExplore.style.left = `${rect.left - 410}px`;
+            exploreLinks.style.right = '';  
+            priaExplore.style.right = '';   
+            wanitaExplore.style.right = ''; 
+        }
+    }
+    // Add event listener for window resize
+    window.addEventListener('resize', updateExplore);
+    // Add event listener for fullscreen change
+    document.addEventListener('fullscreenchange', updateExplore);
+    updateExplore();
