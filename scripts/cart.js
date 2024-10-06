@@ -2,6 +2,7 @@
 function loadCartItems() {
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     const cartBody = document.getElementById('cart-items');
+    const checkoutButton = document.querySelector('#cart-total .normal'); // Get the checkout button
     
     cartBody.innerHTML = ''; // Clear existing items
 
@@ -27,12 +28,16 @@ function loadCartItems() {
                 cartBody.appendChild(row);
             }
         });
+        // Show the "Proceed to checkout" button when there are items
+        checkoutButton.style.display = 'block';
+    } else {
+        // Hide the "Proceed to checkout" button when the cart is empty
+        checkoutButton.style.display = 'none';
     }
 
     // Update cart total at the end
     updateCartTotal(cartItems);
 }
-
 // Function to update the quantity of an item
 function updateQuantity(name, newQuantity) {
     let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -67,11 +72,15 @@ function removeItem(name) {
 }
 
 // Function to update the total cost of the cart
+// Function to update the total cost of the cart
 function updateCartTotal(cartItems) {
     const total = cartItems.reduce((sum, item) => {
         const itemPrice = parseFloat(item.price.replace(/Rp/g, '').replace(/\./g, '').trim()) || 0;
         return sum + (itemPrice * item.quantity);
     }, 0);
+
+    // Save the total to localStorage
+    localStorage.setItem('cartTotal', total);
 
     // Display the total cost in the "Cart Total" section
     document.querySelector('#cart-total table tr:nth-child(3) td:last-child').innerText = total.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' });

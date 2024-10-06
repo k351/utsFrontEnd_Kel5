@@ -51,12 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 categoriesHidden.classList.remove('categories-header-show');  
             }
         });/* */
-    } else{
+    } else {
         // Automatically show elements on shop.html without scrolling
         const searchHidden = document.querySelector('.search-header');
-        const categoriesHidden = document.querySelector('.categories-header'); 
         searchHidden.classList.add('search-header-show');
-        categoriesHidden.classList.add('categories-header-show'); 
     }
     
     searchInput.addEventListener('focus', () => {

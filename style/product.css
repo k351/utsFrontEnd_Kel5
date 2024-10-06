@@ -194,3 +194,16 @@
     }
     
 }
+
+@media(max-width: 768px) {
+    .main-product-details {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-product-details .product-details-button {
+        justify-content: center;
+    }
+}
