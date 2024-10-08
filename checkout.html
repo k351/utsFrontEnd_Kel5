@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revife.</title>
     <link rel="stylesheet" href="style/header.css">
-    <link rel="stylesheet" href="style/home.css">
-    <link rel="stylesheet" href="style/categories.css">
-    <link rel="stylesheet" href="style/carousel.css">
-    <link rel="stylesheet" href="style/products.css">
     <link rel="stylesheet" href="style/footer.css">
-    <link rel="stylesheet" href="style/cart.css">
     <link rel="stylesheet" href="style/checkout.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="style/style.css">
@@ -26,18 +21,15 @@
             </div>
             <form action="#" class="search-header">
                 <input type="text" placeholder="Search for products">
-                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></i></button>
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
             <nav class="navbar">
                 <ul class="nav-menu">
                     <li class="nav-item"><span class="nav-link" id="Explore">Explore <i class="fa-solid fa-angle-down"></i></span></li>
-                    <li class="nav-item"><a href="#" class="nav-link"><img src="images\icon\moon.png" alt="" id="dark-theme"></a></li>
-                    <li class="nav-item"><a href="" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                    <li class="nav-item"><a href="#" class="nav-link"><i class="fa-solid fa-heart"></i></a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><img src="images/icon/moon.png" alt="" id="dark-theme"></a></li>
+                    <li class="nav-item"><a href="./cart.html" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li class="nav-item"><a href="./wishlist.html" class="nav-link"><i class="fa-solid fa-heart"></i></a></li>
                 </ul>
-                <div class="sign-option">
-                    <button class="sign-in">Sign In</button>
-                </div>
                 <div class="hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -58,12 +50,8 @@
             </nav>
         </div>
         <div class="explore-links">
-            <div class="pria">
-                Pria
-            </div>
-            <div class="wanita">
-                Wanita
-            </div>
+            <div class="pria">Pria</div>
+            <div class="wanita">Wanita</div>
         </div>
         <div class="explore-contents">
             <div class="contents" id="pria-contents">
@@ -88,7 +76,7 @@
             </div>
             <div class="contents" id="wanita-contents">
                 <div class="divition">
-                <h1>New Arrivals</h1>
+                    <h1>New Arrivals</h1>
                     <ul>
                         <li><a href="">Pakaian</a></li>
                         <li><a href="">Celana</a></li>
@@ -110,39 +98,49 @@
                 </div>
             </div>
         </div>
-
     </header>
 
     <section id="cart-check-out" class="section-p2">
         <div class="total">
-            <h3>Address Delivery</h3>
+            <h3>Address Delivery
+                <button id="edit-address-btn">Edit Address</button>
+                <div class="edit-address-modal" id="edit-address-modal">
+                    <button id="save-address-btn">Save</button>
+                    <button id="cancel-btn">Cancel</button>
+                </div>
+            </h3>
             <table>
                 <tr>
                     <td>Contact Person</td>
-                    <td>Christopher | (+62) 896-2324-4972</td>
+                    <td id="contact-person">-</td>
+                </tr>
+                <tr>
+                    <td>Phone Number</td>
+                    <td id="phone-number">-</td>
                 </tr>
                 <tr>
                     <td>Address</td>
-                    <td>Jl Sunter Karya G K A V I / 14</td>
+                    <td id="address">-</td>
                 </tr>
                 <tr>
                     <td>City</td>
-                    <td>North Jakarta</td>
+                    <td id="city">-</td>
                 </tr>
                 <tr>
                     <td>Postcode</td>
-                    <td>11510</td>
+                    <td id="postcode">-</td>
                 </tr>
             </table>
+            
             <h3>Cart Total</h3>
             <table>
                 <tr>
                     <td>Cart Total</td>
-                    <td>Rp 807.000</td>
+                    <td><strong id="cart-total-cell">Rp 0</strong></td>
                 </tr>
                 <tr>
                     <td>Coupon</td>
-                    <td>Rp (10.000)</td>
+                    <td><strong id="discount-cell">Rp 0</strong></td>
                 </tr>
                 <tr>
                     <td>Shipping</td>
@@ -150,7 +148,7 @@
                 </tr>
                 <tr>
                     <td><strong>Total</strong></td>
-                    <td><strong>Rp 797.000</strong></td>
+                    <td><strong id="total-cell">Rp 0</strong></td>
                 </tr>
             </table>
             <div class="payment">
@@ -163,7 +161,7 @@
                     <option value="bank">Bank</option>
                 </select>
             </div>
-            <button class="normal"><a href="checkout.html">Checkout</a></button>
+            <button id="checkout-button" class="normal">Checkout</button>
         </div>
     </section>
 
@@ -208,23 +206,17 @@
             <h4>Install App</h4>
             <p>From App Store and Google Play</p>
             <div class="row">
-                <img src="images\icon\app.jpg" alt="App Store">
-                <img src="images\icon\play.jpg" alt="Play Store">
+                <img src="images/icon/app.jpg" alt="App Store">
+                <img src="images/icon/play.jpg" alt="Play Store">
             </div>
-            <p>Secured Payment Gateway</p>
-            <img src="images\icon\pay.png" alt="Secured Payment">
+            <p>Secured Payment Gateways</p>
+            <img src="images/icon/pay.png" alt="Payment Gateways">
         </div>
-
     </footer>
 
-    <div class="copyright">
-        <p>© 2024, UTS Front-End Programming</p>
-    </div>
-
-    <script src="./scripts/darkmode.js"></script>
-    <script src="./scripts/resmenu.js"></script>
-    <script src="./scripts/hamburger.js"></script>
-    <script src="./scripts/carousel.js"></script>
-    <script src="./scripts/header.js"></script>
+    <script src="scripts/checkout.js"></script>
+    <script src="scripts/darkmode.js"></script>
+    <script src="scripts/hamburger.js"></script>
+    <script src="scripts/resmenu.js"></script>
 </body>
 </html>

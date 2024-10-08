@@ -2,8 +2,8 @@
 
 :root {
     --primary-color: #f3f3f3;
-    --secondary-color: #4E8786;
-    --tertiary-color: #313638;
+    --secondary-color: #ACACDE;
+    --tertiary-color: #000;
     --quarternary-color: #1DBF73;
     --quinary-color: #A9A9A9;
     --primary-font: 'Libre Baskerville', sans-serif;
@@ -12,9 +12,9 @@
 
 .darkmode {
     --primary-color: #1C1C1C;
-    --secondary-color: #00ADB5; 
+    --secondary-color: #36b1b7; 
     --tertiary-color: #EEEEEE;
-    --quarternary-color: #72afff; 
+    --quarternary-color: #80B7FF; 
     --quinary-color: #8d99ad;
 }
 
@@ -30,12 +30,12 @@
 
 ::-webkit-scrollbar-thumb {
     border-radius: 10px; 
-    background-color: var(--tertiary-color);
+    background-color: var(--primary-color); 
     border: 2px solid #f1f1f1; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--primary-color); 
+    background-color: var(--tertiary-color);
 }
 
 * {
@@ -99,6 +99,10 @@ section {
         display: none;
     }
 
+    .home .content .home-details p {
+        font-size: 5vw;
+    }
+
     .carousel-container:hover .arrow {
         display: none;
     }
@@ -143,10 +147,6 @@ section {
         border-bottom: 2px solid var(--tertiary-color);
     }
 
-    .main-header .navbar .sign-option {
-        display: none;
-    } 
-
     .main-header .navbar .hamburger {
         display: block;
         justify-content: space-between;
@@ -171,10 +171,6 @@ section {
     .home .content .home-details {
         height: 40vh;
         width: 80vw;
-    }
-
-    .home .content .home-details p {
-        font-size: 5vw;
     }
 
     .carousel-container {

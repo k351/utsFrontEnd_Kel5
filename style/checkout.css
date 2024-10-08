@@ -5,34 +5,43 @@
     background-color: var(--primary-color);
 }
 
+#cart-check-out .total {
+    width: 50%;
+    margin-bottom: 30px;
+    border: 1px solid var(--quinary-color);
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 #cart-check-out .total h3 {
     padding-bottom: 15px;
     color: var(--tertiary-color);
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #cart-check-out .total button {
     padding: 12px;
     width: 100%;
     border: none;
-    border-radius: 2px;
+    border-radius: 4px;
     background-color: var(--secondary-color);
     color: var(--primary-color);
     cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
-#cart-check-out .total button a {
-    text-decoration: none;
-    color: var(--primary-color);
+mark
+#cart-check-out .total button:hover {
+    background-color: darken(var(--secondary-color), 10%);
 }
 
-#cart-check-out .total {
-    width: 50%;
-    margin-bottom: 30px;
-    border: 1px solid var(--quinary-color);
-    padding: 30px;
-}
-
-#cart-check-out table {
+#cart-check-out .total table {
     border-collapse: collapse;
     width: 100%;
     margin-bottom: 20px;
@@ -42,15 +51,38 @@
     width: 50%;
     border: 1px solid var(--quinary-color);
     padding: 10px;
-    font-size: 13px;
+    font-size: 14px;
     color: var(--tertiary-color);
 }
 
 #cart-check-out .payment {
+    margin: 10px 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 #cart-check-out .payment #payment-method {
-    margin: 0 0 10px 20px;
+    width: 15%;
+}
+
+#cart-check-out .total #edit-address-btn {
+    padding: 6px 12px;
+    width: 60%;
+    font-size: 80%;
+    border-radius: 2px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+#cart-check-out .total #save-address-btn, 
+#cart-check-out .total #cancel-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 2px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    display: none;
 }

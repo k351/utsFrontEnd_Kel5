@@ -4,6 +4,7 @@ footer {
     flex-wrap: wrap;
     background-color: var(--primary-color);
     color: var(--tertiary-color);
+    border-top: 1px solid var(--tertiary-color);
 }
 
 footer .col {
@@ -35,7 +36,7 @@ footer a {
     color: var(--tertiary-color);
 }
 
-footer .social {
+footer .social .icon {
     padding-right: 4px;
     cursor: pointer;
 }
