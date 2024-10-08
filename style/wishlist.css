@@ -42,14 +42,23 @@
     color: var(--tertiary-color);
 }
 
+.filter-section.active .filter-header i {
+    transform: rotate(180deg);
+}
+
 .filter-options {
-    margin-top: 10px;
-    display: none;
+    height: 0; /* start from zero */
+    overflow: hidden;
+    transition: height 0.5s ease;
+}
+
+.filter-section.active .filter-options {
+    height: 300px; /* any reasonable fixed height */
 }
 
 .filter-options label {
     display: block;
-    margin-bottom: 10px;
+    margin-top: 10px;
     font-size: 14px;
 }
 
@@ -92,6 +101,8 @@
 }
 
 .product-card {
+    display: flex;
+    flex-direction: column;
     max-width: 240px; 
     background-color: white;
     border-radius: 10px;
@@ -161,6 +172,10 @@
 
 .wishlist-btn i {
     font-size: 20px;
+}
+
+.wishlist-btn:hover {
+    color: var(--secondary-color);
 }
 
 .product-location, .product-sold {
@@ -267,5 +282,9 @@
 
     .search-header button {
         display: none;
+    }
+
+    .wishlist-main {
+        padding: 3rem 0;
     }
 }

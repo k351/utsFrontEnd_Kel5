@@ -11,4 +11,4 @@ function search() {
             items[i].style.display = "none"
         }
     }
-}
+} 
