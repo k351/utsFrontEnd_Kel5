@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="style/home.css">
     <link rel="stylesheet" href="style/categories.css">
     <link rel="stylesheet" href="style/carousel.css">
-    <link rel="stylesheet" href="style/products.css">
     <link rel="stylesheet" href="style/footer.css">
     <link rel="stylesheet" href="style/cart.css">
     <link rel="stylesheet" href="style/checkout.css">
     <link rel="stylesheet" href="style/wishlist.css">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/products.css">
+    <link rel="stylesheet" href="style/product.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <script src="scripts/jquery-3.7.1.min.js"></script>
 </head>
@@ -57,23 +58,31 @@
         </div>
         <div class="explore-links">
             <div class="pria">
-                Pria
+                <h3>pria</h3>
+                <h5>Temukan Style mu disini</h5>
             </div>
             <div class="wanita">
-                Wanita
+                <h3>wanita</h3>
+                <h5>Temukan hal menarik disini</h5>
             </div>
         </div>
         <div class="explore-contents">
             <div class="contents" id="pria-contents">
                 <div class="divition">
-                    <h1>New Arrivals</h1>
+                    <h5>New Arrivals</h5>
                     <ul>
-                        <li><a href="">Pakaian</a></li>
-                        <li><a href="">Celana</a></li>
+                        <li><a href="">Uni sweatshirt</a></li>
+                        <li><a href="">White Polo</a></li>
+                    </ul>
+                    <br>
+                    <h5>Hot</h5>
+                    <ul>
+                        <li><a href="">Godzilla Shirt</a></li>
+                        <li><a href="">CN Shirt</a></li>
                     </ul>
                 </div>
                 <div class="divition">
-                    <h1>Category</h1>
+                    <h5>Category</h5>
                     <ul>
                         <li><a href="">Kemeja</a></li>
                         <li><a href="">Kaos</a></li>
@@ -86,20 +95,23 @@
             </div>
             <div class="contents" id="wanita-contents">
                 <div class="divition">
-                <h1>New Arrivals</h1>
-                    <ul>
-                        <li><a href="">Pakaian</a></li>
-                        <li><a href="">Celana</a></li>
-                    </ul>
+                <h5>New Arrivals</h5>
+                <ul>
+                    <li><a href="">Uni sweatshirt</a></li>
+                    <li><a href="">White Polo</a></li>
+                </ul>
+                <br>
+                <h5>Hot</h5>
+                <ul>
+                    <li><a href="">Godzilla Shirt</a></li>
+                    <li><a href="">Jacket Relax</a></li>
+                </ul>
                 </div>
                 <div class="divition">
-                    <h1>Category</h1>
+                    <h5>Category</h5>
                     <ul>
                         <li><a href="">Kemeja</a></li>
                         <li><a href="">Kaos</a></li>
-                        <li><a href="">Jaket</a></li>
-                        <li><a href="">Sweater</a></li>
-                        <li><a href="">Hoodie</a></li>
                         <li><a href="">Jeans</a></li>
                         <li><a href="">Rok</a></li>
                         <li><a href="">Gaun</a></li>
@@ -149,11 +161,11 @@
                 </div>
                 <div class="filter-options">
                     <ul>
-                        <li>Audio, Kamera & Elektronik</li>
-                        <li>Buku</li>
-                        <li>Dapur</li>
-                        <li>Elektronik</li>
-                        <li>Fashion Anak & Bayi</li>
+                        <li><a href="">Audio, Kamera & Elektronik</a></li>
+                        <li><a href="">Buku</a></li>
+                        <li><a href="">Dapur</a></li>
+                        <li><a href="">Elektronik</a></li>
+                        <li><a href="">Fashion Anak & Bayi</a></li>
                     </ul>
                     <a href="#">Lihat Kategori Lainnya</a>
                 </div>
@@ -161,60 +173,16 @@
         </div>
         
     
-        <div class="wishlist-container">
-            <!-- Product Card 1 -->
-            <div class="product-card">
-                <div class="image-container">
-                    <img src="images/wishlist/Shoe New Balance.png" alt="Sepatu New Balance">
+        <div class="wishlist-container" id="wishlist-container">
+            <section class="products">
+                <h2>New Arrival</h2>
+                <p>Summer Collection New Morden Designs</p>
+                <div class="box-container">
+        
                 </div>
-                <div class="product-info">
-                    <h3 class="product-title">New Balance</h3>
-                    <h4 class="product-price">Rp 1.599.000</h4>
-                    <p class="product-location">Kota Cimahi</p>
-                    <p class="product-sold">Terjual 3</p>
-                    <div class="rating">
-                        <i class="fa fa-star"></i> 5.0
-                    </div>
-                </div>
-                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
-                <button class="add-cart">+ Keranjang</button>
-            </div>
-
-            <div class="product-card">
-                <div class="image-container">
-                    <img src="images/wishlist/Shoe New Balance.png" alt="Sepatu New Balance">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">New Balance</h3>
-                    <h4 class="product-price">Rp 1.599.000</h4>
-                    <p class="product-location">Kota Cimahi</p>
-                    <p class="product-sold">Terjual 3</p>
-                    <div class="rating">
-                        <i class="fa fa-star"></i> 5.0
-                    </div>
-                </div>
-                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
-                <button class="add-cart">+ Keranjang</button>
-            </div>
-    
-            <div class="product-card">
-                <div class="image-container">
-                    <img src="images/wishlist/Shoe New Balance.png" alt="Sepatu New Balance">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">New Balance</h3>
-                    <h4 class="product-price">Rp 1.599.000</h4>
-                    <p class="product-location">Kota Cimahi</p>
-                    <p class="product-sold">Terjual 3</p>
-                    <div class="rating">
-                        <i class="fa fa-star"></i> 5.0
-                    </div>
-                </div>
-                <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
-                <button class="add-cart">+ Keranjang</button>
-            </div>
-    
-            <div class="product-card">
+            </section>
+        
+            <!-- <div class="product-card">
                 <div class="image-container">
                     <img src="images/wishlist/Shoe New Balance.png" alt="Sepatu New Balance">
                 </div>
@@ -229,8 +197,7 @@
                 </div>
                 <button class="wishlist-btn"><i class="fa fa-heart"></i></button>
                 <button class="add-cart"><a href="./cart.html">+ Keranjang</a></button>
-            </div>
-    
+            </div> -->
     
         </div>
     </section>
@@ -282,6 +249,7 @@
             </div>
             <p>Secured Payment Gateway</p>
             <img src="images\icon\pay.png" alt="Secured Payment">
+
         </div>
 
     </footer>
@@ -290,11 +258,13 @@
         <p>© 2024, UTS Front-End Programming</p>
     </div>
 
-    <script src="./scripts/wishlist-filter.js"></script>
+
     <script src="./scripts/darkmode.js"></script>
     <script src="./scripts/resmenu.js"></script>
     <script src="./scripts/hamburger.js"></script>
     <script src="./scripts/header.js"></script>
     <script src="./scripts/wishlist-filter.js"></script>
+    <script src="./scripts/addToCart.js"></script>
+    <script src="./scripts/wishlist.js"></script>
 </body>
 </html>

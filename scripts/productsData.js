@@ -5,14 +5,16 @@ const productsData = [
         "name": "Crew Neck T-Shirts",
         "stars": 5,
         "price": "Rp199.000",
+        "sold" : 5,
         "cart_icon_color": "#000000"
     },
     {
         "image": "images/products/f2.png",
         "category": "t-shirts",
         "name": "Godzilla Short Sleeve UT",
-        "stars": 5,
+        "stars": 4,
         "price": "Rp209.000",
+        "sold" : 20,
         "cart_icon_color": "#000000"
     },
     {
@@ -21,6 +23,7 @@ const productsData = [
         "name": "Fleece Full-Zip Jacket",
         "stars": 5,
         "price": "Rp399.000",
+        "sold" : 5,
         "cart_icon_color": "#000000"
     },
     {
@@ -29,6 +32,7 @@ const productsData = [
         "name": "Unisex Sweatshirts",
         "stars": 5,
         "price": "Rp269.000",
+        "sold" : 5,
         "cart_icon_color": "#000000"
     },
     {
@@ -37,6 +41,7 @@ const productsData = [
         "name": "Ultra Stretch Skinny Fit Jeans",
         "stars": 5,
         "price": "Rp599.000",
+        "sold" : 5,
         "cart_icon_color": "#000000"
     },
     {
@@ -45,6 +50,7 @@ const productsData = [
         "name": "White Polo",
         "stars": 5,
         "price": "Rp299.000",
+        "sold" : 5,
         "cart_icon_color": "#000000"
     },
     {
@@ -53,14 +59,16 @@ const productsData = [
         "name": "Tailored Jacket Relax Fit",
         "stars": 5,
         "price": "Rp399.000",
+        "sold" : 5,
         "cart_icon_color": "#000000"
     },
     {
         "image": "images/products/f8.png",
         "category": "jacket",
         "name": "Soft Flannel Skipper Shirt",
-        "stars": 5,
+        "stars": 4,
         "price": "Rp399.000",
+        "sold" : 10,
         "cart_icon_color": "#000000"
     }
 ];
