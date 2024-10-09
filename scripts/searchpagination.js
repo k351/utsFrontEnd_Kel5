@@ -1,4 +1,6 @@
 import productsData from './productsData.js';
+import { loadIconStates } from './addToWishlist.js';
+import { attachWishlistEventListeners } from './indexproduct.js';
 
 // Pagination variables
 let paginationCurrentPage = 1;
@@ -12,9 +14,14 @@ function renderProducts(page) {
     const paginatedProducts = filteredProducts.slice(startIndex, endIndex);
 
     let productContainer = document.querySelector('.box-container');
-    productContainer.innerHTML = '';
+    productContainer.innerHTML = '';  // Clear the container
+
+    // Load the saved icon states
+    const iconStates = loadIconStates();
 
     paginatedProducts.forEach(product => {
+        const isInWishlist = iconStates[product.name] || false;
+
         let productBox = `
             <div class="box">
                 <img src="${product.image}" alt="${product.name}">
@@ -29,10 +36,16 @@ function renderProducts(page) {
                 <a onclick="addToCart('${product.name}', '${product.image}', '${product.price}')">
                     <i class="fa-solid fa-cart-plus cart" style="color: ${product.cart_icon_color};"></i>
                 </a>
+                <button class="wishlist-btn" data-product-name="${product.name}">
+                    <i class="${isInWishlist ? 'fa-solid' : 'fa-regular'} fa-heart"
+                       style="color: ${isInWishlist ? 'var(--secondary-color)' : 'gray'};"></i>
+                </button>
             </div>
         `;
         productContainer.innerHTML += productBox;
     });
+
+    attachWishlistEventListeners();
 }
 
 // Function to create pagination buttons dynamically

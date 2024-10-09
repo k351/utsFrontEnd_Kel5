@@ -10,16 +10,16 @@ function addToWishlist(name, image, price, sold, stars, element) {
         const updatedWishlist = wishlistItems.filter(item => item.name !== name);
         localStorage.setItem('wishlistItems', JSON.stringify(updatedWishlist));
         alert('Item removed from wishlist!');
-        updateIconState(name, false, element);  
+        updateIconState(name, false, element);
     } else {
         // If the item doesn't exist, add it to the wishlist
         wishlistItems.push({ name, image, price, sold, stars });
         localStorage.setItem('wishlistItems', JSON.stringify(wishlistItems));
         alert('Item added to wishlist!');
-        updateIconState(name, true, element);  
+        updateIconState(name, true, element);
     }
 
-    console.log(JSON.parse(localStorage.getItem('wishlistItems')));  
+    console.log(JSON.parse(localStorage.getItem('wishlistItems')));
 }
 
 // Function to update the heart icon and save its state to localStorage
