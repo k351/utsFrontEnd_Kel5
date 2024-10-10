@@ -94,6 +94,10 @@
     transform: rotate(180deg);
 }
 
+#priceArrow {
+    margin-left: 0.7rem;
+}
+
 .wishlist-container {
     display: grid;
     width: 75%;

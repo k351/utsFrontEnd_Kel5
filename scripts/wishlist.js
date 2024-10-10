@@ -1,6 +1,9 @@
 import productsData from './productsData.js';
 import { addToWishlist, loadIconStates } from './addToWishlist.js';
 
+let currentSortCriteria = null;
+let currentSortOrder = 'asc'; 
+
 // Function to sort items based on selected filter
 function sortWishlistItems(items, criteria, order = 'asc') {
     let sortedItems = [...items];  
@@ -8,7 +11,7 @@ function sortWishlistItems(items, criteria, order = 'asc') {
         return sortedItems.sort((a, b) => {
             const priceA = parseFloat(a.price.replace(/[^\d]/g, ''));  
             const priceB = parseFloat(b.price.replace(/[^\d]/g, '')); 
-            return priceA - priceB; 
+            return order === 'asc' ? priceA - priceB : priceB - priceA;
         });
     } else if (criteria === 'rating') {
         return sortedItems.sort((a, b) => b.stars - a.stars);  
@@ -27,7 +30,6 @@ function sortWishlistItems(items, criteria, order = 'asc') {
     return sortedItems; 
 }
 
-
 // Function to load wishlist items from localStorage and display them
 function loadWishlistItems(sortCriteria = null, sortOrder = 'asc') {
     const wishlistItems = JSON.parse(localStorage.getItem('wishlistItems')) || [];
@@ -39,7 +41,6 @@ function loadWishlistItems(sortCriteria = null, sortOrder = 'asc') {
     const iconStates = loadIconStates();
     
     if (wishlistItems.length > 0) { 
-
         // Apply sorting if a criteria is selected
         let sortedItems = wishlistItems;
         if (sortCriteria) {
@@ -87,6 +88,7 @@ document.querySelectorAll('input[name="sort"]').forEach(radio => {
 
         if (sortValue === 'price') {
             sortCriteria = 'price';
+            sortOrder = currentSortOrder; // Maintain the current sort order
         } else if (sortValue === 'rating') {
             sortCriteria = 'rating';
         } else if (sortValue === 'name-asc') {
@@ -100,6 +102,26 @@ document.querySelectorAll('input[name="sort"]').forEach(radio => {
         // Load wishlist with selected sorting criteria and order
         loadWishlistItems(sortCriteria, sortOrder); 
     });
+});
+
+// Handle sorting by price and toggle arrow direction
+document.getElementById('priceArrow').addEventListener('click', function() {
+    const priceArrow = document.getElementById('priceArrow');
+
+    // Toggle sorting order between ascending and descending
+    if (currentSortOrder === 'asc') {
+        currentSortOrder = 'desc';
+        priceArrow.classList.remove('fa-arrow-up');
+        priceArrow.classList.add('fa-arrow-down');
+    } else {
+        currentSortOrder = 'asc';
+        priceArrow.classList.remove('fa-arrow-down');
+        priceArrow.classList.add('fa-arrow-up');
+    }
+
+    // Sort by price using the updated order
+    currentSortCriteria = 'price';
+    loadWishlistItems('price', currentSortOrder); // Reload with new sorting order
 });
 
 // Function to attach event listeners to wishlist buttons
