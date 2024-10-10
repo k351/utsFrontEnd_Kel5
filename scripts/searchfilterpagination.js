@@ -130,20 +130,26 @@ document.getElementById('categories').addEventListener('change', filterByCategor
 
 // Initial load
 window.onload = function() {
-    // Periksa apakah ada query di LocalStorage
-    const searchQuery = localStorage.getItem('searchQuery')
-    const filterQuery = localStorage.getItem('filterQuery')
-    // Jika ada query, masukkan ke dalam search bar dan jalankan search
-    if (searchQuery) {
-    document.getElementById('searchBar').value = searchQuery
-    search() // Jalankan fungsi search untuk memfilter produk
-    localStorage.setItem('searchQuery', '');
+    // Retrieve search and filter queries from LocalStorage
+    const searchQuery = localStorage.getItem('searchQuery');
+    const filterQuery = localStorage.getItem('filterQuery');
+
+    if (searchQuery && searchQuery !== '') {
+        // If there's a search query, fill the search bar and run the search
+        document.getElementById('searchBar').value = searchQuery;
+        search(); // Run the search function to filter products
+        localStorage.setItem('searchQuery', ''); // Clear search query
+    } else if (filterQuery && filterQuery !== 'none') {
+        // If there's a filter category, set it and filter products
+        document.getElementById('categories').value = filterQuery;
+        filterByCategory(); // Run the filter function to filter products
+        localStorage.setItem('filterQuery', 'none'); // Clear filter query
+    } else {
+        // If no search or filter, show all products
+        filteredProducts = productsData; // Reset filtered products to all products
+        renderProducts(paginationCurrentPage); // Render all products
     }
-    else if(filterQuery) {
-        document.getElementById('categories').value = filterQuery
-        filterByCategory()
-        localStorage.setItem('filterQuery', 'none')
-    }
-    renderProducts(paginationCurrentPage);
+
+    // Setup pagination after rendering products
     setupPagination();
 };
