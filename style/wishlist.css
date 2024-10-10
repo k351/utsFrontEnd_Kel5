@@ -222,6 +222,22 @@
     background-color: var();
 }
 
+/* Fade-in effect */
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 0.5s forwards;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
 @media only screen and (max-width: 768px) {
 
     .wishlist-main {

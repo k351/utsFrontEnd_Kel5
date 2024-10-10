@@ -1,21 +1,55 @@
 import productsData from './productsData.js';
 import { addToWishlist, loadIconStates } from './addToWishlist.js';
 
+// Function to sort items based on selected filter
+function sortWishlistItems(items, criteria, order = 'asc') {
+    let sortedItems = [...items];  
+    if (criteria === 'price') {
+        return sortedItems.sort((a, b) => {
+            const priceA = parseFloat(a.price.replace(/[^\d]/g, ''));  
+            const priceB = parseFloat(b.price.replace(/[^\d]/g, '')); 
+            return priceA - priceB; 
+        });
+    } else if (criteria === 'rating') {
+        return sortedItems.sort((a, b) => b.stars - a.stars);  
+    } else if (criteria === 'name') {  
+        return sortedItems.sort((a, b) => {
+            let nameA = a.name.toLowerCase();
+            let nameB = b.name.toLowerCase();
+            if (order === 'asc') {
+                return nameA.localeCompare(nameB);  // Ascending order
+            } else {
+                return nameB.localeCompare(nameA);  // Descending order
+            }
+        });
+    }
+
+    return sortedItems; 
+}
+
+
 // Function to load wishlist items from localStorage and display them
-function loadWishlistItems() {
+function loadWishlistItems(sortCriteria = null, sortOrder = 'asc') {
     const wishlistItems = JSON.parse(localStorage.getItem('wishlistItems')) || [];
     const wishlistContainer = document.getElementById('wishlist-container');
     
-    wishlistContainer.innerHTML = ''; // Clear existing items
+    wishlistContainer.innerHTML = ''; 
     
     // Load the saved icon states
     const iconStates = loadIconStates();
     
-    if (wishlistItems.length > 0) { // Ensure there are items in the wishlist
-        wishlistItems.forEach(product => {
+    if (wishlistItems.length > 0) { 
+
+        // Apply sorting if a criteria is selected
+        let sortedItems = wishlistItems;
+        if (sortCriteria) {
+            sortedItems = sortWishlistItems(wishlistItems, sortCriteria, sortOrder);
+        }
+
+        sortedItems.forEach(product => {
             const isInWishlist = iconStates[product.name] || false;
             let productBox = `
-                <div class="product-card">
+                <div class="product-card fade-in">
                     <div class="image-container">
                         <img src="${product.image}" alt="${product.name}">
                     </div>
@@ -43,6 +77,31 @@ function loadWishlistItems() {
     }
 }
 
+// Function to handle the sort criteria selection
+document.querySelectorAll('input[name="sort"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+        const sortValue = this.value;
+
+        let sortCriteria = null;
+        let sortOrder = 'asc';
+
+        if (sortValue === 'price') {
+            sortCriteria = 'price';
+        } else if (sortValue === 'rating') {
+            sortCriteria = 'rating';
+        } else if (sortValue === 'name-asc') {
+            sortCriteria = 'name';
+            sortOrder = 'asc';
+        } else if (sortValue === 'name-desc') {
+            sortCriteria = 'name';
+            sortOrder = 'desc';
+        }
+
+        // Load wishlist with selected sorting criteria and order
+        loadWishlistItems(sortCriteria, sortOrder); 
+    });
+});
+
 // Function to attach event listeners to wishlist buttons
 function attachWishlistEventListeners() {
     const wishlistButtons = document.querySelectorAll('.wishlist-btn');
@@ -53,31 +112,10 @@ function attachWishlistEventListeners() {
 
             // Call addToWishlist and pass the button element for CSS updates
             addToWishlist(product.name, product.image, product.price, product.sold, product.stars, this);
-            loadWishlistItems();
+            loadWishlistItems(); 
         });
     });
 }
 
-// Function to add an item to the cart
-function addToCart(name, image, price) {
-    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    const existingItem = cartItems.find(item => item.name === name);
-
-    // Check if item already exists in the cart
-    if (existingItem) {
-        existingItem.quantity += 1; // Increase quantity if item exists
-    } else {
-        cartItems.push({ name, image, price, quantity: 1 }); // Add new item if it doesn't exist
-        alert(`${name} has been added to your cart!`);
-    }
-
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    
-    console.log(JSON.parse(localStorage.getItem('cartItems'))); // For debugging
-    
-    // Redirect to the cart page after adding
-    window.location.href = './cart.html';
-}
-
-// Load wishlist items when the page loads
-window.onload = loadWishlistItems;
+// Load wishlist items when the page loads, no sorting applied 
+window.onload = () => loadWishlistItems();
