@@ -52,49 +52,6 @@ function attachWishlistEventListeners() {
     });
 }
 
-// Search function (if needed)
-function search() {
-    let filter = document.getElementById('searchBar').value.toUpperCase();
-    let filteredProducts = productsData.filter(product => product.name.toUpperCase().includes(filter));
-
-    let productContainer = document.querySelector('.box-container');
-    productContainer.innerHTML = '';
-
-    // Load the saved icon states (for wishlist items)
-    const iconStates = loadIconStates();
-
-    filteredProducts.forEach(product => {
-        const isInWishlist = iconStates[product.name] || false;
-
-        let productBox = `
-        <div class="box">
-            <img src="${product.image}" alt="${product.name}">
-            <div class="desc">
-                <span>${product.category}</span>
-                <h5>${product.name}</h5>
-                <div class="star">
-                    ${'<i class="fa-solid fa-star"></i>'.repeat(product.stars)}
-                </div>
-                <h4>${product.price}</h4>
-            </div>
-            <a onclick="addToCart('${product.name}', '${product.image}', '${product.price}')">
-                <i class="fa-solid fa-cart-plus cart" style="color: ${product.cart_icon_color};"></i>
-            </a>
-            <button class="wishlist-btn" data-product-name="${product.name}">
-                <i class="${isInWishlist ? 'fa-solid' : 'fa-regular'} fa-heart"
-                    style="color: ${isInWishlist ? 'var(--secondary-color)' : 'gray'};"></i>
-            </button>
-        </div>
-        `;
-        productContainer.innerHTML += productBox;
-    });
-
-    attachWishlistEventListeners();  // Attach event listeners to search results
-}
-
-// Attach event listener for search bar
-document.getElementById('searchBar').addEventListener('input', search);
-
 // Initialize load when the window is ready
 window.onload = function() {
     renderProducts();  

@@ -50,44 +50,44 @@ function renderProducts(page) {
 
 // Function to create pagination buttons dynamically
 function setupPagination() {
-  const paginationContainer = document.getElementById('pagination');
-  paginationContainer.innerHTML = '';
+    const paginationContainer = document.getElementById('pagination');
+    paginationContainer.innerHTML = '';
 
-  const totalPages = Math.ceil(filteredProducts.length / paginationItemsPerPage);
+    const totalPages = Math.ceil(filteredProducts.length / paginationItemsPerPage);
 
-  // Create number buttons
-  for (let i = 1; i <= totalPages; i++) {
-      let pageLink = document.createElement('a');
-      pageLink.innerText = i;
-      if (i === paginationCurrentPage) {
-          pageLink.classList.add('active');
-      }
-      pageLink.href = '#';
-      pageLink.onclick = () => changePage(i);
-      paginationContainer.appendChild(pageLink);
-  }
+    // Create number buttons
+    for (let i = 1; i <= totalPages; i++) {
+        let pageLink = document.createElement('a');
+        pageLink.innerText = i;
+        if (i === paginationCurrentPage) {
+            pageLink.classList.add('active');
+        }
+        pageLink.href = '#';
+        pageLink.onclick = () => changePage(i);
+        paginationContainer.appendChild(pageLink);
+    }
 
-  // Create navigation button (this will stay on the right of the last number button)
-  if (totalPages > 1) {
-      const navButton = document.createElement('a');
-      navButton.href = '#';
-      navButton.classList.add('pagination-nav');
+    // Right arrow (forward navigation)
+    if (paginationCurrentPage < totalPages) {
+        const navButtonNext = document.createElement('a');
+        navButtonNext.href = '#';
+        navButtonNext.innerHTML = '<i class="fa-solid fa-arrow-right"></i>';
+        navButtonNext.classList.add('pagination-nav');
+        navButtonNext.onclick = () => changePage(paginationCurrentPage + 1);
+        paginationContainer.appendChild(navButtonNext);
+    }
 
-      if (paginationCurrentPage === 1) {
-          navButton.innerHTML = '<i class="fa-solid fa-arrow-right"></i>';
-          navButton.onclick = () => changePage(paginationCurrentPage + 1);
-      } else if (paginationCurrentPage > 1 && paginationCurrentPage < totalPages) {
-          navButton.innerHTML = '<i class="fa-solid fa-arrow-left"></i>';
-          navButton.onclick = () => changePage(paginationCurrentPage - 1);
-      } else if (paginationCurrentPage === totalPages) {
-          navButton.innerHTML = '<i class="fa-solid fa-arrow-left"></i>';
-          navButton.onclick = () => changePage(paginationCurrentPage - 1);
-      }
-
-      // Append the navigation button after the last page link
-      paginationContainer.appendChild(navButton);
-  }
+    // Left arrow (backward navigation)
+    if (paginationCurrentPage > 1) {
+        const navButtonPrev = document.createElement('a');
+        navButtonPrev.href = '#';
+        navButtonPrev.innerHTML = '<i class="fa-solid fa-arrow-left"></i>';
+        navButtonPrev.classList.add('pagination-nav');
+        navButtonPrev.onclick = () => changePage(paginationCurrentPage - 1);
+        paginationContainer.appendChild(navButtonPrev);
+    }
 }
+
 
 // Function to change the page and re-render products
 function changePage(page) {
@@ -114,6 +114,16 @@ document.getElementById('searchBar').addEventListener('input', search);
 
 // Initial load
 window.onload = function() {
+
+    // Periksa apakah ada query di LocalStorage
+    const searchQuery = localStorage.getItem('searchQuery')
+
+    // Jika ada query, masukkan ke dalam search bar dan jalankan search
+    if (searchQuery) {
+    document.getElementById('searchBar').value = searchQuery
+    search() // Jalankan fungsi search untuk memfilter produk
+    }
+    
     renderProducts(paginationCurrentPage);
     setupPagination();
 };

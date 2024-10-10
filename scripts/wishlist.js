@@ -39,7 +39,7 @@ function loadWishlistItems() {
 
         attachWishlistEventListeners();
     } else {
-        wishlistContainer.innerHTML = '<p class="wishlist-empty">Your wishlist is empty!</p>';
+        wishlistContainer.innerHTML = '<p style="color: var(--tertiary-color);">Your wishlist is empty!</p>';
     }
 }
 
