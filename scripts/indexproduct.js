@@ -60,7 +60,12 @@ function search() {
     let productContainer = document.querySelector('.box-container');
     productContainer.innerHTML = '';
 
+    // Load the saved icon states (for wishlist items)
+    const iconStates = loadIconStates();
+
     filteredProducts.forEach(product => {
+        const isInWishlist = iconStates[product.name] || false;
+
         let productBox = `
         <div class="box">
             <img src="${product.image}" alt="${product.name}">
@@ -76,7 +81,8 @@ function search() {
                 <i class="fa-solid fa-cart-plus cart" style="color: ${product.cart_icon_color};"></i>
             </a>
             <button class="wishlist-btn" data-product-name="${product.name}">
-                <i class="fa-regular fa-heart"></i>
+                <i class="${isInWishlist ? 'fa-solid' : 'fa-regular'} fa-heart"
+                    style="color: ${isInWishlist ? 'var(--secondary-color)' : 'gray'};"></i>
             </button>
         </div>
         `;
