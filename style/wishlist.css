@@ -186,6 +186,16 @@
     color: var(--secondary-color);
 }
 
+/* Wishlist Empty Message Styling */
+.wishlist-empty {
+    color: var(--tertiary-color); /* You can change this color to whatever you prefer */
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+
 .product-location, .product-sold {
     font-size: 14px;
     color: var(--quinary-color);
