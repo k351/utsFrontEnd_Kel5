@@ -126,3 +126,18 @@
     font-size: 13px;
     color: var(--tertiary-color);
 }
+
+@media (max-width: 768px) {
+    #cart-total {
+        flex-direction: column;
+    }
+
+    #cart-total .coupon {
+        width: 100%;
+    }
+
+    #cart-total .total {
+        width: 100%;
+        padding: 30px;
+    }
+}

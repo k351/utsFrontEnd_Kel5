@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/product.css">
     <script src="scripts/jquery-3.7.1.min.js"></script>
+    <script id="productData" type="application/json">
+        {"name": "Crew Neck T-Shirts"}
+    </script>
 </head>
 <body>
     <header>
@@ -116,37 +119,39 @@
 
         <div class="black-box"></div>
     </header>
-
+    <div class="compare-list-container">
+        <i class="fa-solid fa-x" id="compare-list-close"></i>
+        <ul class="compare-list">
+        </ul>
+    </div>
     <section class="product">
         <div class="product-container">
             <div class="compare-product">
                 <div class="compare-product-image">
-                    <img src="./images/products/f2.png" alt="">
-                    <i class="fa-solid fa-heart"></i>
+                    <img src="" alt="">
                 </div>
                 <div class="compare-summary">
                     <h5>(Compared-product)</h5>
-                    <h3>Men's Fashion T Shirt</h3>
-                    <h2>$150.00</h4>
+                    <h3></h3>
+                    <h2></h2>
                 </div>
             </div>
             <div class="compare-line"></div>
             <div class="main-product">
                 <div class="product-image">
                     <img src="./images/products/f1.png" alt="">
-                    <i class="fa-solid fa-heart"></i>
                 </div>
                 <div class="main-product-summary1">
-                    <h5>Home/T shirts</h5>
-                    <h3>Men's Fashion T Shirt</h3>
-                    <h2>$139.00</h4>
+                    <h5>T shirts</h5>
+                    <h3>Crew Neck T-Shirts</h3>
+                    <h2>Rp199.000</h4>
                 </div>
             </div>
             <div class="main-product-details">
                 <div class="main-product-summary2">
-                    <h6>Home/T shirts</h6>
-                    <h4>Men's Fashion T Shirt</h4>
-                    <h2>$139.00</h2>
+                    <h6>T shirts</h6>
+                    <h4>Crew Neck T-Shirts</h4>
+                    <h2>Rp199.000</h2>
                 </div>
                 <select>
                     <option>Select Size</option>
@@ -165,14 +170,10 @@
                     </button>    
                 </div>
                 <h4>Product Details</h4>
-                <p> Lorem, ipsum dolor sit amet 
-                    consectetur adipisicing elit. 
-                    Molestiae veniam fuga laborum 
-                    quibusdam ducimus iusto, ratione 
-                    hic voluptas similique dolores 
-                    necessitatibus dolor repellat 
-                    voluptatem minus dolore obcaecati rem. 
-                    Ratione, aspernatur!
+                <p> Temukan kenyamanan maksimal dalam kesederhanaan dengan koleksi baju polos kami yang terbuat dari 100% katun berkualitas premium. Desain minimalis yang elegan menjadikan baju ini pilihan tepat untuk gaya sehari-hari, baik untuk bersantai di rumah maupun beraktivitas di luar.
+                    <br>
+                    <br>
+                    Kain katun yang lembut memberikan rasa nyaman di kulit, serta memiliki sirkulasi udara yang baik sehingga tetap sejuk sepanjang hari. Selain itu, daya serap tinggi dari bahan katun menjaga tubuh tetap kering dan bebas dari rasa gerah.
                 </p>
             </div>
         </div>
@@ -200,20 +201,19 @@
 
         <div class="col">
             <h4>About</h4>
-            <a href="#">About Us</a>
-            <a href="#">Delivery Information</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Contact Us</a>
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="cart.html">Cart</a>
+            <a href="wishlist.html">Wishlist</a>
         </div>
 
         <div class="col">
-            <h4>My Account</h4>
-            <a href="#">Sign In</a>
-            <a href="#">View Cart</a>
-            <a href="#">My Wishlist</a>
-            <a href="#">Track My Order</a>
-            <a href="#">Help</a>
+            <h4>Best Seller</h4>
+            <a href="#">Crew Neck T-Shirts</a>
+            <a href="#">Soft Flannel Skipper Shirt</a>
+            <a href="#">White Polo</a>
+            <a href="#">Unisex Sweatshirts</a>
+            <a href="#">Fleece Full-Zip Jacket</a>
         </div>
 
         <div class="col-install">
@@ -236,7 +236,8 @@
     <script src="./scripts/resmenu.js"></script>
     <script src="./scripts/hamburger.js"></script>
     <script src="./scripts/header.js"></script>
-    <script src="./scripts/compare.js"></script>
     <script src="./scripts/categoriesQuery.js"></script>
+    <script type="module" src="./scripts/compare.js"></script>
+    <script type="module" src="./scripts/productWishlist.js"></script>
 </body>
 </html>

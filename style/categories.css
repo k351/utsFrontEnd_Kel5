@@ -58,4 +58,9 @@
     .categories .content .categories-links {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .categories .content .categories-links li a{
+        height: 150px;
+        width: 150px;
+    }
 }

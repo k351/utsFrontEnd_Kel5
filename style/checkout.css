@@ -94,13 +94,15 @@ mark
     display: none;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1150px) {
     #cart-check-out .total {
         width: 70%;
         margin: auto;
     }
+}
 
+/* Responsive Design */
+@media (max-width: 768px) {
     #cart-check-out .payment #payment-method {
         width: 20vw;
     }

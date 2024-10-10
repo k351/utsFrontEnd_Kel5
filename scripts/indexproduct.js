@@ -1,6 +1,10 @@
 import productsData from './productsData.js';
 import { addToWishlist, loadIconStates } from './addToWishlist.js';
 
+function redirectToProductPage(index) {
+    window.location.href = `product_${index}.html`; 
+}
+
 // Function to render all products (without pagination)
 function renderProducts() {
     let productContainer = document.querySelector('.box-container');
@@ -13,24 +17,28 @@ function renderProducts() {
         const isInWishlist = iconStates[product.name] || false;
 
         let productBox = `
-            <div class="box">
-                <img src="${product.image}" alt="${product.name}">
-                <div class="desc">
-                    <span>${product.category}</span>
-                    <h5>${product.name}</h5>
-                    <div class="star">
-                        ${'<i class="fa-solid fa-star"></i>'.repeat(product.stars)}
-                    </div>
-                    <h4>${product.price}</h4>
+            
+                <div class="box">
+                    <a onclick="redirectToProductPage(${product.index})">
+                        <img src="${product.image}" alt="${product.name}">
+                        <div class="desc">
+                            <span>${product.category}</span>
+                            <h5>${product.name}</h5>
+                            <div class="star">
+                                ${'<i class="fa-solid fa-star"></i>'.repeat(product.stars)}
+                            </div>
+                            <h4>${product.price}</h4>
+                        </div>
+                        <a onclick="addToCart('${product.name}', '${product.image}', '${product.price}')">
+                            <i class="fa-solid fa-cart-plus cart" style="color: ${product.cart_icon_color};"></i>
+                        </a>
+                        <button class="wishlist-btn" data-product-name="${product.name}">
+                            <i class="${isInWishlist ? 'fa-solid' : 'fa-regular'} fa-heart"
+                            style="color: ${isInWishlist ? 'var(--secondary-color)' : 'gray'};"></i>
+                        </button>
+                    </a>
                 </div>
-                <a onclick="addToCart('${product.name}', '${product.image}', '${product.price}')">
-                    <i class="fa-solid fa-cart-plus cart" style="color: ${product.cart_icon_color};"></i>
-                </a>
-                <button class="wishlist-btn" data-product-name="${product.name}">
-                    <i class="${isInWishlist ? 'fa-solid' : 'fa-regular'} fa-heart"
-                       style="color: ${isInWishlist ? 'var(--secondary-color)' : 'gray'};"></i>
-                </button>
-            </div>
+
         `;
         productContainer.innerHTML += productBox;
     });
@@ -56,5 +64,5 @@ function attachWishlistEventListeners() {
 window.onload = function() {
     renderProducts();  
 };
-
+window.redirectToProductPage = redirectToProductPage;
 export {attachWishlistEventListeners};

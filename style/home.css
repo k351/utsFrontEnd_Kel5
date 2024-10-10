@@ -55,3 +55,32 @@
     border-radius: 0 4px 4px 0;
     cursor: pointer;
 }
+
+@media (max-width: 1150px) {
+    .home .content .home-details p {
+        font-size: 5vw;
+    }
+
+    .carousel-container:hover .arrow {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .home .content .home-details {
+        height: 40vh;
+        width: 80vw;
+    }
+
+    .carousel {
+        padding: 30px 5px 20px 5px;
+    }
+
+    .carousel-container {
+        border-radius: 0px;
+    }
+
+    .categories .content .categories-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

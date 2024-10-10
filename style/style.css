@@ -62,6 +62,7 @@ section {
 
 .section-p1 {
     padding: 40px 80px;
+    min-height: 30vh;
 }
 
 .section-p2 {
@@ -85,28 +86,6 @@ section {
     color: var(--primary-color);
 }
 
-@media(max-width: 1150px){
-
-    .nav-item {
-        margin: 0 5px;
-    }
-
-    .search-header {
-        width: 17vw;
-    }
-
-    .search-header button {
-        display: none;
-    }
-
-    .home .content .home-details p {
-        font-size: 5vw;
-    }
-
-    .carousel-container:hover .arrow {
-        display: none;
-    }
-}
 
 @media(max-width: 768px) {
 
@@ -120,77 +99,5 @@ section {
 
     section {
         padding-top: 145px;
-    }
-
-    .main-header .navbar .nav-menu {
-        width: 100%;
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        flex-direction: column;
-        gap: 0;
-        align-items: center;
-        transition: 0.3s;
-        background-color: var(--primary-color);
-    }
-
-    .main-header .navbar .nav-menu .nav-item {
-        margin: 16px 0;
-    }
-
-    .main-header .search-header {
-        width: 40vw;
-    }
-
-    .main-header .nav-menu.active {
-        left: 0;
-        border-bottom: 2px solid var(--tertiary-color);
-    }
-
-    .main-header .navbar .hamburger {
-        display: block;
-        justify-content: space-between;
-    }
-
-    .hamburger.active .bar:nth-child(2){
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(1){
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(3){
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .categories-header .categories-header-show {
-        top: 77px;
-    }
-
-    .home .content .home-details {
-        height: 40vh;
-        width: 80vw;
-    }
-
-    .carousel-container {
-        border-radius: 0px;
-    }
-
-    .categories .content .categories-links {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    #cart-total {
-        flex-direction: column;
-    }
-
-    #cart-total .coupon {
-        width: 100%;
-    }
-
-    #cart-total .total {
-        width: 100%;
-        padding: 30px;
     }
 }
