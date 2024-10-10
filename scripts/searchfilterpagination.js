@@ -86,6 +86,7 @@ function setupPagination() {
         navButtonPrev.onclick = () => changePage(paginationCurrentPage - 1);
         paginationContainer.appendChild(navButtonPrev);
     }
+    
 }
 
 
@@ -109,21 +110,40 @@ function search() {
     setupPagination();
 }
 
+function filterByCategory() {
+    const selectedCategory = document.getElementById('categories').value.toUpperCase();
+
+    if (selectedCategory === "none") {
+        filteredProducts = productsData; 
+    } else {
+        filteredProducts = productsData.filter(product => product.category.toUpperCase() === selectedCategory);
+    }
+    paginationCurrentPage = 1;
+
+    renderProducts(paginationCurrentPage);
+    setupPagination();
+}
+
 // Attach event listener for search bar
 document.getElementById('searchBar').addEventListener('input', search);
+document.getElementById('categories').addEventListener('change', filterByCategory);
 
 // Initial load
 window.onload = function() {
-
     // Periksa apakah ada query di LocalStorage
     const searchQuery = localStorage.getItem('searchQuery')
-
+    const filterQuery = localStorage.getItem('filterQuery')
     // Jika ada query, masukkan ke dalam search bar dan jalankan search
     if (searchQuery) {
     document.getElementById('searchBar').value = searchQuery
     search() // Jalankan fungsi search untuk memfilter produk
+    localStorage.setItem('searchQuery', '');
     }
-    
+    else if(filterQuery) {
+        document.getElementById('categories').value = filterQuery
+        filterByCategory()
+        localStorage.setItem('filterQuery', '')
+    }
     renderProducts(paginationCurrentPage);
     setupPagination();
 };

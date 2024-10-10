@@ -40,12 +40,12 @@
         <div class="categories-header">
             <nav>
                 <ul>
-                    <li><a href="#">Kemeja</a></li>
-                    <li><a href="#">Kaos</a></li>
-                    <li><a href="#">Jaket</a></li>
-                    <li><a href="#">Hoodie</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="#">Rok</a></li>
+                    <li><a href="#" data-category="shirts" onclick="handleCategoryFilter(event)">Shirts</a></li>
+                    <li><a href="#" data-category="t-shirts" onclick="handleCategoryFilter(event)">T-Shirts</a></li>
+                    <li><a href="#" data-category="jackets" onclick="handleCategoryFilter(event)">Jackets</a></li>
+                    <li><a href="#" data-category="chinos" onclick="handleCategoryFilter(event)">Chinos</a></li>
+                    <li><a href="#" data-category="jeans" onclick="handleCategoryFilter(event)">Jeans</a></li>
+                    <li><a href="#" data-category="skirts" onclick="handleCategoryFilter(event)">Skirts</a></li>
                 </ul>
             </nav>
         </div>
@@ -56,44 +56,53 @@
         <div class="explore-contents">
             <div class="contents" id="pria-contents">
                 <div class="divition">
-                    <h1>New Arrivals</h1>
+                    <h5>New Arrivals</h5>
                     <ul>
-                        <li><a href="">Pakaian</a></li>
-                        <li><a href="">Celana</a></li>
+                        <li><a href="">Uni sweatshirt</a></li>
+                        <li><a href="">White Polo</a></li>
+                    </ul>
+                    <br>
+                    <h5>Hot</h5>
+                    <ul>
+                        <li><a href="">Godzilla Shirt</a></li>
+                        <li><a href="">CN Shirt</a></li>
                     </ul>
                 </div>
                 <div class="divition">
-                    <h1>Category</h1>
+                    <h5>Category</h5>
                     <ul>
-                        <li><a href="">Kemeja</a></li>
-                        <li><a href="">Kaos</a></li>
-                        <li><a href="">Jaket</a></li>
-                        <li><a href="">Sweater</a></li>
-                        <li><a href="">Hoodie</a></li>
-                        <li><a href="">Jeans</a></li>
+                        <li><a data-category="shirts" onclick="handleCategoryFilter(event)">Shirts</a></li>
+                        <li><a data-category="t-shirts" onclick="handleCategoryFilter(event)">T-Shirts</a></li>
+                        <li><a data-category="jacket" onclick="handleCategoryFilter(event)">Jackets</a></li>
+                        <li><a data-category="sweatshirt" onclick="handleCategoryFilter(event)">Sweatshirt</a></li>
+                        <li><a data-category="chinos" onclick="handleCategoryFilter(event)">Chinos</a></li>
+                        <li><a data-category="jeans" onclick="handleCategoryFilter(event)">Jeans</a></li>
                     </ul>
                 </div>
             </div>
             <div class="contents" id="wanita-contents">
                 <div class="divition">
-                    <h1>New Arrivals</h1>
-                    <ul>
-                        <li><a href="">Pakaian</a></li>
-                        <li><a href="">Celana</a></li>
-                    </ul>
+                <h5>New Arrivals</h5>
+                <ul>
+                    <li><a href="">Uni sweatshirt</a></li>
+                    <li><a href="">White Polo</a></li>
+                </ul>
+                <br>
+                <h5>Hot</h5>
+                <ul>
+                    <li><a href="">Godzilla Shirt</a></li>
+                    <li><a href="">Jacket Relax</a></li>
+                </ul>
                 </div>
                 <div class="divition">
-                    <h1>Category</h1>
+                    <h5>Category</h5>
                     <ul>
-                        <li><a href="">Kemeja</a></li>
-                        <li><a href="">Kaos</a></li>
-                        <li><a href="">Jaket</a></li>
-                        <li><a href="">Sweater</a></li>
-                        <li><a href="">Hoodie</a></li>
-                        <li><a href="">Jeans</a></li>
-                        <li><a href="">Rok</a></li>
-                        <li><a href="">Gaun</a></li>
-                        <li><a href="">Blus</a></li>
+                        <li><a data-category="shirts" onclick="handleCategoryFilter(event)">Shirts</a></li>
+                        <li><a data-category="t-shirts" onclick="handleCategoryFilter(event)">T-Shirts</a></li>
+                        <li><a data-category="jeans" onclick="handleCategoryFilter(event)">Jeans</a></li>
+                        <li><a data-category="skirts" onclick="handleCategoryFilter(event)">Skirts</a></li>
+                        <li><a data-category="dress" onclick="handleCategoryFilter(event)">Dress</a></li>
+                        <li><a data-category="blouses" onclick="handleCategoryFilter(event)">Blouses</a></li>
                     </ul>
                 </div>
             </div>
@@ -218,5 +227,6 @@
     <script src="scripts/darkmode.js"></script>
     <script src="scripts/hamburger.js"></script>
     <script src="scripts/resmenu.js"></script>
+    <script src="./scripts/categoriesQuery.js"></script>
 </body>
 </html>

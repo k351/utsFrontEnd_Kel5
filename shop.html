@@ -46,12 +46,12 @@
         <div class="categories-header">
             <nav>
                 <ul>
-                    <li><a href="#">Kemeja</a></li>
-                    <li><a href="#">Kaos</a></li>
-                    <li><a href="#">Jaket</a></li>
-                    <li><a href="#">Hoodie</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="#">Rok</a></li>
+                    <li><a href="#" data-category="shirts" onclick="handleCategoryFilter(event)">Shirts</a></li>
+                    <li><a href="#" data-category="t-shirts" onclick="handleCategoryFilter(event)">T-Shirts</a></li>
+                    <li><a href="#" data-category="jackets" onclick="handleCategoryFilter(event)">Jackets</a></li>
+                    <li><a href="#" data-category="chinos" onclick="handleCategoryFilter(event)">Chinos</a></li>
+                    <li><a href="#" data-category="jeans" onclick="handleCategoryFilter(event)">Jeans</a></li>
+                    <li><a href="#" data-category="skirts" onclick="handleCategoryFilter(event)">Skirts</a></li>
                 </ul>
             </nav>
         </div>
@@ -83,12 +83,12 @@
                 <div class="divition">
                     <h5>Category</h5>
                     <ul>
-                        <li><a href="">Kemeja</a></li>
-                        <li><a href="">Kaos</a></li>
-                        <li><a href="">Jaket</a></li>
-                        <li><a href="">Sweater</a></li>
-                        <li><a href="">Hoodie</a></li>
-                        <li><a href="">Jeans</a></li>
+                        <li><a data-category="shirts" onclick="handleCategoryFilter(event)">Shirts</a></li>
+                        <li><a data-category="t-shirts" onclick="handleCategoryFilter(event)">T-Shirts</a></li>
+                        <li><a data-category="jacket" onclick="handleCategoryFilter(event)">Jackets</a></li>
+                        <li><a data-category="sweatshirt" onclick="handleCategoryFilter(event)">Sweatshirt</a></li>
+                        <li><a data-category="chinos" onclick="handleCategoryFilter(event)">Chinos</a></li>
+                        <li><a data-category="jeans" onclick="handleCategoryFilter(event)">Jeans</a></li>
                     </ul>
                 </div>
             </div>
@@ -109,12 +109,12 @@
                 <div class="divition">
                     <h5>Category</h5>
                     <ul>
-                        <li><a href="">Kemeja</a></li>
-                        <li><a href="">Kaos</a></li>
-                        <li><a href="">Jeans</a></li>
-                        <li><a href="">Rok</a></li>
-                        <li><a href="">Gaun</a></li>
-                        <li><a href="">Blus</a></li>
+                        <li><a data-category="shirts" onclick="handleCategoryFilter(event)">Shirts</a></li>
+                        <li><a data-category="t-shirts" onclick="handleCategoryFilter(event)">T-Shirts</a></li>
+                        <li><a data-category="jeans" onclick="handleCategoryFilter(event)">Jeans</a></li>
+                        <li><a data-category="skirts" onclick="handleCategoryFilter(event)">Skirts</a></li>
+                        <li><a data-category="dress" onclick="handleCategoryFilter(event)">Dress</a></li>
+                        <li><a data-category="blouses" onclick="handleCategoryFilter(event)">Blouses</a></li>
                     </ul>
                 </div>
             </div>
@@ -124,6 +124,21 @@
     </header>
 
     <section class="products">
+        <div class="categories-filter">
+            <h1>Filter by:</h1>
+            <select name="categories" id="categories" class="categories-selection">
+                <option value="none">none</option>
+                <option value="shirts">Shirts</option>
+                <option value="t-shirts">T-shirts</option>
+                <option value="jacket">Jackets</option>
+                <option value="chinos">Chinos</option>
+                <option value="jeans">Jeans</option>
+                <option value="skirts">Skirts</option>
+                <option value="blouses">Blouses</option>
+                <option value="dress">Dress</option>
+                <option value="sweatshirt">Sweatshirts</option>
+            </select>
+        </div>
         <div class="box-container"></div>
     </section>
 
@@ -190,6 +205,7 @@
     <script src="./scripts/header.js"></script>
     <script src="./scripts/addToCart.js"></script>
     <script src="./scripts/searchQuery.js"></script>
-    <script type="module" src="./scripts/searchpagination.js"></script>
+    <script src="./scripts/categoriesQuery.js"></script>
+    <script type="module" src="./scripts/searchfilterpagination.js"></script>
 </body>
 </html>
