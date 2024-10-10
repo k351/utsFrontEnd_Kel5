@@ -1,6 +1,6 @@
 // Retrieve the cart total and discount from localStorage
 const cartTotal = localStorage.getItem('cartTotal');
-const discount = localStorage.getItem('discount') || 0; // Default to 0 if not set
+const discount = localStorage.getItem('couponDiscount') || 0; // Fetch coupon discount; default to 0 if not set
 
 // Format the values for display
 const formattedCartTotal = cartTotal ? Number(cartTotal).toLocaleString('id-ID') : '0';
@@ -88,8 +88,8 @@ function resetCartAndCheckoutData() {
     // Clear the cart items and totals in localStorage
     localStorage.removeItem('cartItems');
     localStorage.removeItem('cartTotal');
-    localStorage.removeItem('discount');
-    
+    localStorage.removeItem('couponDiscount'); // Ensure correct item name is used for coupon discount
+
     // Clear the cart display
     const cartItems = document.getElementById('cart-items');
     if (cartItems) {
@@ -139,25 +139,25 @@ function resetCartAndCheckoutData() {
 document.getElementById('checkout-button').addEventListener('click', function(event) {
     event.preventDefault(); // Prevent immediate navigation
 
-        // Get address fields
-        const contactPerson = document.getElementById('contact-person').innerText.trim();
-        const phoneNumber = document.getElementById('phone-number').innerText.trim();
-        const address = document.getElementById('address').innerText.trim();
-        const city = document.getElementById('city').innerText.trim();
-        const postcode = document.getElementById('postcode').innerText.trim();
-        
-        // Validate if fields are empty
-        if (!contactPerson || !phoneNumber || !address || !city || !postcode) {
-            alert("Please fill in all address details (Contact Person, Phone Number, Address, City, Postcode).");
-            return; // Prevent proceeding if validation fails
-        }
+    // Get address fields
+    const contactPerson = document.getElementById('contact-person').innerText.trim();
+    const phoneNumber = document.getElementById('phone-number').innerText.trim();
+    const address = document.getElementById('address').innerText.trim();
+    const city = document.getElementById('city').innerText.trim();
+    const postcode = document.getElementById('postcode').innerText.trim();
+    
+    // Validate if fields are empty
+    if (!contactPerson || !phoneNumber || !address || !city || !postcode) {
+        alert("Please fill in all address details");
+        return; // Prevent proceeding if validation fails
+    }
 
-            // Check if the cart total is zero
-        if (finalTotal === 0) {
-            alert("You have nothing in your cart."); // Alert if total is zero
-            return; // Prevent proceeding if the cart is empty
-        }
-        
+    // Check if the cart total is zero
+    if (finalTotal === 0) {
+        alert("You have nothing in your cart."); // Alert if total is zero
+        return; // Prevent proceeding if the cart is empty
+    }
+    
     resetCartAndCheckoutData(); // Reset cart and address data
     alert("Berhasil Check Out!"); // Notify user
     
