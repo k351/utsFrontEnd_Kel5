@@ -138,6 +138,26 @@ function resetCartAndCheckoutData() {
 // Checkout button functionality
 document.getElementById('checkout-button').addEventListener('click', function(event) {
     event.preventDefault(); // Prevent immediate navigation
+
+        // Get address fields
+        const contactPerson = document.getElementById('contact-person').innerText.trim();
+        const phoneNumber = document.getElementById('phone-number').innerText.trim();
+        const address = document.getElementById('address').innerText.trim();
+        const city = document.getElementById('city').innerText.trim();
+        const postcode = document.getElementById('postcode').innerText.trim();
+        
+        // Validate if fields are empty
+        if (!contactPerson || !phoneNumber || !address || !city || !postcode) {
+            alert("Please fill in all address details (Contact Person, Phone Number, Address, City, Postcode).");
+            return; // Prevent proceeding if validation fails
+        }
+
+            // Check if the cart total is zero
+        if (finalTotal === 0) {
+            alert("You have nothing in your cart."); // Alert if total is zero
+            return; // Prevent proceeding if the cart is empty
+        }
+        
     resetCartAndCheckoutData(); // Reset cart and address data
     alert("Berhasil Check Out!"); // Notify user
     

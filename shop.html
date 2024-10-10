@@ -25,8 +25,8 @@
                     <h2>revife<span>.</span></h2>
                 </a>
             </div>
-            <form action="#" class="search-header">
-                <input type="text" placeholder="Search for products" id="searchBar" oninput="search()">
+            <form action="javascript:void(0);" class="search-header" onsubmit="handleSearch()">
+                <input type="text" placeholder="Search for products" id="searchBar">
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
             <nav class="navbar">
@@ -184,11 +184,12 @@
         <p>© 2024, UTS Front-End Programming</p>
     </div>
 
-    <script type="module" src="./scripts/searchpagination.js"></script>
     <script src="./scripts/darkmode.js"></script>
     <script src="./scripts/resmenu.js"></script>
     <script src="./scripts/hamburger.js"></script>
     <script src="./scripts/header.js"></script>
     <script src="./scripts/addToCart.js"></script>
+    <script src="./scripts/searchQuery.js"></script>
+    <script type="module" src="./scripts/searchpagination.js"></script>
 </body>
 </html>
