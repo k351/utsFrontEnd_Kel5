@@ -142,7 +142,7 @@ window.onload = function() {
     else if(filterQuery) {
         document.getElementById('categories').value = filterQuery
         filterByCategory()
-        localStorage.setItem('filterQuery', '')
+        localStorage.setItem('filterQuery', 'none')
     }
     renderProducts(paginationCurrentPage);
     setupPagination();
