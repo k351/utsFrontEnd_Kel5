@@ -35,6 +35,24 @@
     color: var(--tertiary-color);
 }
 
+.products .categories-filter {
+    display: flex;
+    margin-left: 20px;
+}
+
+.categories-filter h1 {
+    margin-top: 4px;
+}
+
+.products .categories-selection {
+    height: 40px;
+    width: 150px;
+    margin-left: 20px;
+    padding-left: 10px;
+    font-size: 14px;
+    border-radius: 3px;
+}
+
 .products .box-container {
     display: flex;
     justify-content: center;
