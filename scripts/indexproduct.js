@@ -59,7 +59,7 @@ function renderProducts() {
  * Ketika tombol di klik, produk akan ditambahkan atau dihapus dari wishlist.
  */
 function attachWishlistEventListeners() {
-    const wishlistButtons = document.querySelectorAll('.wishlist-btn'); 
+    const wishlistButtons = document.querySelectorAll('.wishlist-btn'); 2
     wishlistButtons.forEach(btn => {
         btn.addEventListener('click', function() {
             const productName = this.getAttribute('data-product-name'); // Mengambil nama produk dari atribut

@@ -49,7 +49,7 @@ $(document).ready(function() {
         clearInterval(autoSlideInterval);
     }
 
-    startAutoSlide(); 
+    startAutoSlide(); 32
 
     // Fungsi untuk berpindah ke slide sebelumnya
     function moveToPrevSlide() {

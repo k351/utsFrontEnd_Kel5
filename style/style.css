@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
+/* Variabel warna dasar */
 :root {
     --primary-color: #f3f3f3;
     --secondary-color: #ACACDE;
@@ -10,6 +11,7 @@
     --secondary-font: 'Poppins', Arial;
 }
 
+/* Variabel warna mode darkmode */
 .darkmode {
     --primary-color: #1C1C1C;
     --secondary-color: #36b1b7; 
@@ -18,6 +20,7 @@
     --quinary-color: #8d99ad;
 }
 
+/* Mengatur styling scrollbar */
 ::-webkit-scrollbar {
     background: var(--primary-color); 
     width: 10px;

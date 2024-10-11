@@ -6,7 +6,7 @@ function addToWishlist(name, image, price, sold, stars, element) {
 
     // Memeriksa apakah item sudah ada di dalam wishlist
     const existingItem = wishlistItems.find(item => item.name === name);
-
+``
     if (existingItem) {
         // Jika item sudah ada, hapus dari wishlist
         const updatedWishlist = wishlistItems.filter(item => item.name !== name);
@@ -22,7 +22,6 @@ function addToWishlist(name, image, price, sold, stars, element) {
     }
 }
 
-// Fungsi untuk menambah atau menghapus item dari wishlist
 function updateIconState(productName, isAdded, element) {
    // Mengambil status ikon dari localStorage
    let iconStates = JSON.parse(localStorage.getItem('wishlistIconStates')) || {};
