@@ -118,6 +118,7 @@
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
+    border: 1px solid var(--tertiary-color);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
@@ -132,18 +133,22 @@
     padding: 15px;
     text-align: center;
     font-size: 1rem;
-    background-color: var(--tertiary-color);
+    background-color: var(--primary-color);
     flex-grow: 1;
 }
 
+.product-info h3 {
+    color: var(--tertiary-color);
+}
+
 .product-info h4 {
-    color: var(--primary-color);
+    color: var(--tertiary-color);
     font-size: 18px;
     margin-bottom: 10px;
 }
 
 .product-info p {
-    color: var(--primary-color);
+    color: var(--tertiary-color);
     margin-bottom: 8px;
 }
 
