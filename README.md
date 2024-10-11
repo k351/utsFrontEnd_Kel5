@@ -6,8 +6,8 @@ Hai! Kami adalah tim beranggotakan 3 orang yang bersemangat dalam menciptakan pl
 ## Alvin Kurniawan (535230084) - k351  
 ## Christopher Wijaya (535230158) - bluw6525  
 
--[Link Youube Demo](https://www.youtube.com/watch?v=nEtIriYSrlU)
--[Link Source Code](https://youtu.be/Z615WdRMCEs)
+-[Link Youtube Demo](https://www.youtube.com/watch?v=nEtIriYSrlU)
+-[Link Video Source Code](https://youtu.be/Z615WdRMCEs)
 
 Dalam proyek ini, kami berkolaborasi untuk menciptakan website fashion modern yang ditujukan bagi kaum muda dengan fokus pada tampilan yang stylish dan nyaman. Kami berharap platform ini dapat memberikan pengalaman berbelanja online yang praktis dan menyenangkan bagi penggunanya.
 
