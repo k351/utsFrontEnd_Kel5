@@ -1,8 +1,6 @@
-.home
-{
+.home {
     display: flex;
     justify-content: center;
-    align-items: top;
 }
 
 .home .background-image {
