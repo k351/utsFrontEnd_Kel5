@@ -18,14 +18,14 @@
 }
 
 #pagination a.active {
-    background-color: var(--secondary-color); /* Different color for the active page */
+    background-color: var(--secondary-color); 
     color: var(--primary-color);
     border-color: #9ecaed;
     box-shadow: 0 0 10px #9ecaed;
 }
 
 #pagination a:hover {
-    background-color: var(--quaternary-color); /* Color change on hover */
+    background-color: var(--quaternary-color); 
     color: var(--secondary-color);
 }
 
@@ -100,6 +100,7 @@
 }
 
 .products .box .desc h5 {
+    color: var(--tertiary-color);
     padding-top: 7px;
     font-size: 14px;
 }

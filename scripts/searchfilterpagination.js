@@ -24,22 +24,24 @@ function renderProducts(page) {
 
         let productBox = `
             <div class="box">
-                <img src="${product.image}" alt="${product.name}">
-                <div class="desc">
-                    <span>${product.category}</span>
-                    <h5>${product.name}</h5>
-                    <div class="star">
-                        ${'<i class="fa-solid fa-star"></i>'.repeat(product.stars)}
+                <a href="product_${product.index}.html">
+                    <img src="${product.image}" alt="${product.name}">
+                    <div class="desc">
+                        <span>${product.category}</span>
+                        <h5>${product.name}</h5>
+                        <div class="star">
+                            ${'<i class="fa-solid fa-star"></i>'.repeat(product.stars)}
+                        </div>
+                        <h4>${product.price}</h4>
                     </div>
-                    <h4>${product.price}</h4>
-                </div>
-                <a onclick="addToCart('${product.name}', '${product.image}', '${product.price}')">
-                    <i class="fa-solid fa-cart-plus cart" style="color: ${product.cart_icon_color};"></i>
+                    <a onclick="addToCart('${product.name}', '${product.image}', '${product.price}')">
+                        <i class="fa-solid fa-cart-plus cart" style="color: ${product.cart_icon_color};"></i>
+                    </a>
+                    <button class="wishlist-btn" data-product-name="${product.name}">
+                        <i class="${isInWishlist ? 'fa-solid' : 'fa-regular'} fa-heart"
+                        style="color: ${isInWishlist ? 'var(--secondary-color)' : 'gray'};"></i>
+                    </button>
                 </a>
-                <button class="wishlist-btn" data-product-name="${product.name}">
-                    <i class="${isInWishlist ? 'fa-solid' : 'fa-regular'} fa-heart"
-                       style="color: ${isInWishlist ? 'var(--secondary-color)' : 'gray'};"></i>
-                </button>
             </div>
         `;
         productContainer.innerHTML += productBox;
